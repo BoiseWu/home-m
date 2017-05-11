@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+    <meta name="keywords" content="B2B" />
+    <meta name="description" content="B2B" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+	<META HTTP-EQUIV="Expires" CONTENT="0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/script_ini.js?pg=fav"></script>
+</head>
+
+
+<body>
+
+<div class="sort-list sort-list-v1">
+    <div class="sort-tap">
+        <ul class="tap">
+        <li class="product on" data-kind="product"><a href="javascript:;">货品</a></li>
+        <li class="shop" data-kind="shop"><a href="javascript:;">供应商</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="order-list order-list-v3 ol_nor" style="display: none">
+<ul>
+
+</ul>
+</div>
+
+<div class="no-page" style="display: none">
+    <i class="no-icon icon5"></i>
+    <div class="no-text">
+        <p>您还未收藏过任何店铺哦</p>
+        <a href="javascript:;" class="btn-rhome">去首页逛逛</a>
+    </div>
+</div>
+
+<div class="p-acitonbar action-del" style="display: none">
+    <div class="ui-flex ui-flex-v3">
+        <div class="check"><i class="all-check"><span class="cart-checkbox"><i class="icon-chk"></i></span></i><span class="text">全选</span></div>
+        <a href="#" class="cell btn-pay">取消收藏</a>
+    </div>
+</div>
+
+<script id="fav_pro" type="text/html">
+    <%for (var i=0; i<list.length; i++){%>
+    <li data-itemId="<%:=list[i].itemId%>">
+        <div class="chk-box">
+            <i class="all-check"><span class="cart-checkbox"><i class="icon-chk"></i></span></i>
+            <div class="goods-box">
+                <div class="chk-box-list">
+                    <div class="l-item">
+                        <a href="javascript:;" class="box">
+                            <div class="photo">
+                                <img src="<%:=list[i].mainPictureUrl%>">
+                            </div>
+                            <div class="info">
+                                <h3><%:=list[i].itemName%></h3>
+                                <p><%:=list[i].provinceName%> <%:=list[i].cityName%>  成交 <%:=list[i].saleNum%>笔</p>
+                                <div class="shop" data-shopId="<%:=list[i].shopId%>"><span><i class="icon"></i></span><em><%:=list[i].shopName%></em></div>
+                                <em class="price">￥<%:=list[i].minSellPrice%>~￥<%:=list[i].maxSellPrice%><span class="text-num"><%:=list[i].initialAmount%>件起批</span></em>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <%}%>
+</script>
+
+<script id="fav_sup" type="text/html">
+    <%for (var i=0; i<list.length; i++){%>
+    <li data-shopId="<%:=list[i].shopId%>">
+        <div class="chk-box qjd-list">
+            <i class="all-check"><span class="cart-checkbox"><i class="icon-chk"></i></span></i>
+            <div class="goods-box">
+                <div class="chk-box-list">
+                    <div class="l-item">
+                        <a href="javascript:;" class="box">
+                            <div class="photo">
+                                <img src="<%:=list[i].shopLogo%>">
+                            </div>
+                            <div class="info">
+                                <h3><%:=list[i].shopName%></h3>
+                                <p>经营类目：<span class="text-goods"><%:=list[i].introduce%></span></p>
+                                <p class="star">
+                                    <span class="star-df"><span class="star-yl" style="width:<%:=(list[i].shopLevel * 20)%>%"></span></span>
+                                </p>
+                                <p>商品数量 <%:=list[i].shopCount%> 笔</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <%}%>
+</script>
+</body>
+</html>

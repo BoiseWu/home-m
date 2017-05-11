@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>  
+	<title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/script_ini.js?pg=cmt"></script>
+</head>
+<body>
+
+<div class="m-header">
+	<a href="javascript:;" class="sp-icon go-backs">返回</a>
+    <h1>商品评价</h1>
+</div>
+<div class="h20"></div>
+
+<div class="eva-comm eva-comm-v2">
+	<div class="eva-text bdr-b">
+    </div>    
+</div>
+<div class="sort-list sort-list-v2">
+    <div class="sort-tap">
+        <ul class="tap">
+        <li class="on"><a href="javascript:;" data-state="70">全部</a></li>
+        <li><a href="javascript:;" data-state="5">好评</a></li>
+        <li><a href="javascript:;" data-state="3">中评</a></li>
+        <li><a href="javascript:;" data-state="1">差评</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="evaluate-list" style="display:none;">
+	<ul class="cmt-list">
+    </ul>
+</div>
+
+<div class="no-page" style="display:none;">
+    <i class="no-icon icon11"></i>
+    <div class="no-text">
+        <p>还没有相关评价</p>
+    </div>
+</div>
+
+<script id="comment" type="text/html">
+    <li>
+        <p class="p-text1"><%:=buyerName%> <span class="txt-r"><%:=transNum%>件</span></p>
+        <p class="p-text2"><%:=data.comment%></p>
+        <p class="p-text3"><span><%:=time.yr%>-<%:=time.mth%>-<%:=time.dt%></span><span class="mg-lr20">颜色：黑色</span>尺寸50cm<span></span></p>
+    </li>
+</script>
+
+<script id="statist" type="text/html">
+    <span>
+        <span class="text">商品满意度:</span>
+        <em class="data-num"><%:=score%></em>
+        <span class="data-text">分</span>
+        <span class="star"><span class="star-df"><span class="star-yl" style="width:<%:=score*20%>%"></span></span></span>
+    </span>
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=mine"></script>
+</head>
+<body>
+<div class="top-stap">
+	<div class="ui-flex">
+    	<div class="cell"><span class="txt stap1">①验证身份</span><span class="icon-arr"></span></div>
+        <div class="cell"><span class="txt">②修改登录密码</span><span class="icon-arr"></span></div>
+        <div class="cell"><span class="txt">③完成</span></div>
+    </div>
+</div>
+<input type="hidden" name="userId">
+<div class="register buy-account step1">
+	<div class="box-input">
+        <div class="box">
+            <div class="inp"><span class="phone-bind">已验证手机：<span class="mobile">185****2744</span></span><input type="hidden" name="mobile"></div>
+            
+            <div class="v-code">
+                <a href="javascript:;" class="btn-yzm" id="code_btn" style="display:block">获取短信验证码 </a>
+                <div class="btn-yzm2" style="display:none">获取短信验证码</div>
+                <div class="num">59秒后重发</div>
+            </div>
+        </div>
+        <p class="err-text">请重新输入</p>
+    </div>
+    <div class="box2">
+    	<div class="inp2"><input type="text" name="vcode" class="ipt" placeholder="请输入验证码" value=""></div>
+        <p class="err-text">请重新输入</p>
+    </div>
+    <div class="btn-box"><a href="javascript:;" class="btn-register btn_next_step">下一步</a></div>
+</div>
+
+<div class="register buy-account step2" style="display:none">
+    <div class="box-input">
+        <div class="box">
+            <div class="inp"><input type="tel" name="mobile" id="mobile" class="ipt" maxlength="11" placeholder="请输入手机号" value="" data_type="phone"></div>
+            <!--[D] 获取点击前是 a标签， 获取短信后使用span标签  -->
+
+            <div class="v-code">
+                <!-- [D] 获取短信验证码，59秒后重发  2个按钮已隐藏（状态为display:none）-->
+                <a href="javascript:;" class="btn-yzm" id="code_btn">获取短信验证码 </a>
+                <div class="btn-yzm2">获取短信验证码</div>
+                <div class="num">59秒后重发</div>
+            </div>
+        </div>
+        <p class="err-text">请重新输入</p>
+    </div>
+    <div class="box2">
+        <div class="inp2"><input type="text" name="vcode" class="ipt" placeholder="请输入验证码" value=""></div>
+        <p class="err-text">请重新输入</p>
+    </div>
+    <div class="btn-box"><a href="javascript:;" class="btn-register btn_next_step">下一步</a></div>
+</div>
+
+<div class="register buy-account step3" style="display:none">
+    <div class="tip-succ">
+        <i class="sp-icon"></i>
+        <p>恭喜您，验证成功</p>
+    </div>
+    <div class="btn-box"><a href="javascript:;" class="btn-register btn_next_step">完成</a></div>
+</div>
+</body>
+</html>

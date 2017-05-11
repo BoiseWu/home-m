@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=exchange"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=web_socket"></script>
+    <script>
+        var socket;
+        if (!window.WebSocket) {
+            window.WebSocket = window.MozWebSocket;
+        }
+        if (window.WebSocket) {
+            socket = new WebSocket("ws://localhost:2048/ws");
+            socket.onmessage = function(event) {
+                var ta = document.getElementById('responseText');
+                ta.value = ta.value + '\n' + event.data
+            };
+            socket.onopen = function(event) {
+                var ta = document.getElementById('responseText');
+                ta.value = "连接开启!";
+            };
+            socket.onclose = function(event) {
+                var ta = document.getElementById('responseText');
+                ta.value = ta.value + "连接被关闭";
+            };
+        } else {
+            alert("你的浏览器不支持！");
+        }
+        function send() {
+            var message = $("#message").val();
+            if (!window.WebSocket) {
+                return;
+            }
+            if (socket.readyState == WebSocket.OPEN) {
+                socket.send(message);
+            } else {
+                alert("连接没有开启.");
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+<!-- 编辑模式添加class edit-mode -->
+<div class="cart">
+	<h3 class="title">EXCHANGE  </h3>
+    <div class="exchange_list">
+        <h3>输出：</h3>
+        <textarea id="responseText" style="width: 500px; height: 300px;"></textarea>
+    </div>
+    <!-- 结算 -->
+    <div class="p-acitonbar action-counts">
+        <div class="ui-flex ui-flex-v1">
+
+            <form onsubmit="return false;">
+                <input style="width: 400px;height: 48px" type="text" id="message"  name="message">
+                <a href="javascript:;" class="btn-pay btn_confirm" onclick="send()">发送</a>
+
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+

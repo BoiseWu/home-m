@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=seller"></script>
+</head>
+<body>
+
+<div class="send-order">
+    <input type="hidden" name="orderId">
+    <input type="hidden" name="buyerId">
+	<h4>订单号：<span class="orderId">201510100001</span><span class="static">待买家付款</span></h4>
+    <div class="box-type">
+    	<div class="bt-div primitivePrice">
+            <span>商品总额：<span class="txt-price">￥20659</span></span>
+            <span class="edit-price">修改为<input type="text" name="primitivePrice" class="input-type total_price">元</span>
+        </div>
+        <div class="bt-div freight">
+            <span>运费总额：<span class="txt-price">￥14</span></span>
+            <span class="edit-price">修改为<input type="text" name="freight" class="input-type">元</span>
+        </div>
+        <div class="bt-div discountPrice">
+            <span>优惠总额：<span class="txt-price2">￥-0.00</span></span>
+            <span class="edit-price">修改为<input type="text" name="discountPrice" class="input-type">元</span>
+        </div>
+        <p class="msg">订单金额必须大于0，且优惠总额不能大于商品总额</p>
+    </div>
+</div>
+
+<div class="p-acitonbar action-del">
+    <div class="ui-flex ui-flex-v3">
+        <div class="check"><span class="text-price">买家付款总额：<span class="total_pay">￥22899</span></span></div>
+        <a href="#" class="cell btn-pay">确认</a>
+    </div>
+</div>
+</body>
+</html>

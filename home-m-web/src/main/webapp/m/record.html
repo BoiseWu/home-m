@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="format-detection" content="telphone=no, email=no"/>
+
+	<title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=record"></script>
+</head>
+
+<body>
+
+<div class="shop-tab shop-tab-v1">
+	<ul class="cl ui-flex">
+		<li class="cell"><a href="javascript:;" class="on" data-type="work"><i class="icon2"></i><span>work</span></a></li>
+		<li class="cell"><a href="javascript:;" data-type="life"><i class="icon3"></i><span>life</span></a></li>
+		<li class="cell"><a href="javascript:;" data-type="study"><i class="icon4"></i><span>study</span></a></li>
+		<li class="cell"><a href="javascript:;" data-type="feel"><i class="icon4"></i><span>feel</span></a></li>
+	</ul>
+</div>
+<div class="search-list search-list-v1 mg-b45" style="display:none;">
+	<ul>
+
+    </ul>
+</div>
+<div class="coupon_list mg-b45" style="display:none">
+	<ul>
+
+	</ul>
+</div>
+<!-- 店铺 无商品 -->
+<div class="no-page" style="display:none">
+	<i class="no-icon icon5"></i>
+	<div class="no-text">
+		<p>店铺内暂无商品</p>
+	</div>
+</div>
+<!-- 固定高度加载中 -->
+<div class="loading-bg" style="height:60px;display:none">
+    <div class="loading">
+        <div class="loading-tbl">
+            <div class="cell">
+                <div class="bd">
+                    <img src="images/loading.gif" width="22px" height="22px">正在加载...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wx-share">
+    <img src="images/share.png">
+</div>
+
+<div class="cover-decision" style="z-index: 2000"></div>
+
+<a href="javascript:;" class="btn-top" style="display: none">置顶</a>
+
+<div class="category-list" style="position:fixed; z-index: 9999; left:100%; top: 0; bottom: 0; width: 100%; height: 100%;">
+	<ul class="cate-list"></ul>
+</div>
+
+
+<script type="text/html" id="product_list">
+<%for(var i=0; i<list.length; i++){%>
+<li data-itemID="<%:=list[i].itemId%>">
+	<div class="l-item">
+		<a href="javascript:;">
+			<div class="photo">
+				<img src="<%:=list[i].img%>">
+			</div>
+			<div class="info">
+				<h3><%:=list[i].itemName%></h3>
+				<p><%:=list[i].provinceName%> <%:=list[i].cityName%>  成交 <%:=list[i].saleNum%> 笔</p>
+				<div class="shop"><span><i class="icon"></i></span><em><%:=list[i].shopName%></em></div>
+				<%if(list[i].hasPrice==1){%>
+				<em class="price">￥<%:=list[i].minSellPrice%>~￥<%:=list[i].maxSellPrice%> <span class="text-num"><%:=list[i].initialAmount%>件起批</span></em>
+			<%}else{%>
+				<em class="price">暂无报价</em>
+				<%}%>
+			</div>
+		</a>
+	</div>
+</li>
+<%}%>
+</script>
+
+<script type="text/html" id="coupon_list">
+	<%for(var i=0; i<list.length; i++){%>
+	<%if(list[i].totalCount - list[i].receivedCouponCount > 0){%>
+	<div class="buy-cp" data-couponId="<%:=list[i].id%>">
+		<%}else{%>
+		<div class="buy-cp buy-cp-v1" data-couponId="<%:=list[i].id%>">
+			<span class="order-cmp4"></span>
+			<%}%>
+			<%if(list[i].receive == true){%>
+			<span class="order-cmp3" style="display: block"></span>
+			<%}else{%>
+			<span class="order-cmp3" style="display: none"></span>
+			<%}%>
+			<div class="cp-bg">
+				<span class="cp-bg-txt"><span class="text">￥</span><span class="text2"><%:=comm_fun.get_format_price(list[i].denomination)%></span></span>
+				<span class="cp-bg-txt2">满<%:=comm_fun.get_format_price(list[i].startFee)%>元可用</span>
+			</div>
+			<div class="cp-bg2">
+    	<span class="cp-bg-txt">
+        	<span class="text"><%:=list[i].name%></span>
+            <span class="text2"><%:=comm_fun.coupon_get_limit_type(list[i].limitType)%></span>
+        </span>
+				<span class="cp-bg-txt2">使用期限：<span class="date"><%:=list[i].effectiveStartTime%>-<%:=list[i].effectiveEndTime%></span></span>
+			</div>
+		</div>
+		<%}%>
+</script>
+</body>
+</html>
+                 

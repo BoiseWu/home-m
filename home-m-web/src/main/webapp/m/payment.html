@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=order"></script>
+</head>
+<body>
+
+<div class="pay-c">
+	<p class="money">
+    	<span>请支付</span>
+        <span class="text-red"></span>
+    </p>
+    <div class="money-list">
+    	<a href="javascript:;" class="jd-pay">
+        	<div class="logo"><span><img src="images/jd.png" alt=""></span></div>
+            <div class="info">
+            	<p class="text">京东支付</p>
+                <p class="text2">首次使用，满19立减5元（限实物）</p>
+            </div>
+            <div class="arr">
+            	<span></span>
+            </div>
+        </a>
+    </div>
+    <form method="post" action="#" id="payform" name="payform" style="position:absolute; z-index:-1; left:0; top:-500px;">
+    	<input type="text" name="orderId" value="">
+        <input type="text" name="device_token" value="">
+    </form>
+    <div class="h20"></div>
+ <div class="weixin "style="display: none">
+    <p class="money">
+    	<span>其他支付方式</span>
+    </p>
+    <div class="money-list">
+    	<a href="#" class="jd-pay wx-pay">
+        	<div class="logo"><span><img src="images/webcat.png" alt=""></span></div>
+            <div class="info">
+            	<p class="text">微信支付</p>
+                <p class="text3">微信安全支付</p>
+            </div>
+            <div class="arr">
+            	<span></span>
+            </div>
+        </a>
+    </div>
+
+    </div>
+</div>
+
+</body>
+</html>

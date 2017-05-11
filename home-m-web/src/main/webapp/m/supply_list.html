@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title></title>
+	<meta name="keywords" content="B2B" />
+	<meta name="description" content="B2B" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/script_ini.js?pg=supply"></script>
+</head>
+<body>
+<div class="top-search top-search-v1 ">
+	<a href="javascript:;" class="back"><i class="sp-icon"></i><span class="text">分类</span></a>
+	<div class="frame">
+		<div class="f-m">
+			<div class="option"><span>供应商</span><i class="icon"></i>
+				<div class="op-tip">
+					<ul>
+						<li><a href="#">产品</a></li>
+						<li><a href="#">供应商</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="s-box" style="border-radius: 0 5px 5px 0;"><input type="text" readonly></div>
+		</div>
+	</div>
+	<a href="javascript:;" class="search">搜索</a>
+</div>
+
+<div class="loading">
+	<div class="loading-tbl">
+		<div class="cell">
+			<div class="bd">
+				<img src="images/loading.gif" width="22px" height="22px">正在加载...
+			</div>
+		</div>
+	</div>
+</div>
+<div class="search-list search-list-v1 mt44"style="top: 44px !important;">
+	<ul>
+
+	</ul>
+</div>
+
+<!-- 固定高度加载中 -->
+<div class="loading-bg" style="height:60px;display:none">
+	<div class="loading">
+		<div class="loading-tbl">
+			<div class="cell">
+				<div class="bd">
+					<img src="images/loading.gif" width="22px" height="22px">正在加载...
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/html" id="supply_list">
+	<%for(var i=0; i<list.length; i++){%>
+	<li data-shopID="<%:=list[i].shopId%>">
+		<div class="l-item l-item-v1">
+			<a href="#" class="photo">
+				<div class="photo"><img src="<%:=list[i].shopLogo%>"></div>
+				<div class="info">
+					<h3><%:=list[i].shopName%></h3>
+					<p class="sels">经营类目：<%:=list[i].introduce%></p>
+					<p class="star"><span class="star-df"><span class="star-yl" style="width:<%:=(list[i].shopLevel * 20)%>%"></span></span></p>
+					<p>商品数量 <%:=list[i].shopCount%> 笔</p>
+				</div>
+			</a>
+		</li>
+		</div>
+	</li>
+	<%}%>
+</script>
+
+</body>
+</html>

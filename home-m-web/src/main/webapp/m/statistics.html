@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=statistics"></script>
+</head>
+<body>
+
+<div class="buy-my">
+
+<script id="statistics_data" type="text/html">
+
+<div class="my-item my-item-v1">
+	<h3 class="tit-gk">概况</h3>
+    <div class="hd bdr-b">
+        <a href="javascript:;" class="totalPrice">
+            <div class="text1"><i class="icon8"></i>成交金额</div>
+            <div class="text2"><%:=dataVo.totalPrice %>元</div>
+            <span class="sp-icon" ></span>
+        </a>
+    </div>
+    <div class="hd bdr-b">
+        <a href="javascript:;" class="transOrderCount">
+            <div class="text1"><i class="icon9"></i>成交订单量</div>
+            <div class="text2"><%:=dataVo.transOrderCount %></div>
+            <span class="sp-icon"></span>
+        </a>
+    </div>
+    <div class="hd bdr-b">
+        <a href="javascript:;" class="transProdCount">
+            <div class="text1"><i class="icon10"></i>成交商品数</div>
+            <div class="text2"><%:=dataVo.transProdCount %></div>
+            <span class="sp-icon"></span>
+        </a>
+    </div>
+    <div class="hd bdr-b">
+        <a href="javascript:;" class="totalOrderCount">
+            <div class="text1"><i class="icon11"></i>下单量</div>
+            <div class="text2"><%:=dataVo.totalOrderCount %></div>
+            <span class="sp-icon"></span>
+        </a>
+    </div>
+    <div class="hd">
+        <a href="javascript:;" class="transRate">
+            <div class="text1"><i class="icon12"></i>下单成交转化率</div>
+            <div class="text2"><%:=dataVo.transRate %>%</div>
+            <span class="sp-icon"></span>
+        </a>
+    </div>
+</div>
+
+</script>
+<div class="footer-tab ft-shop" style="display: block !important;">
+    <div class="ui-flex">
+    	<div class="cell">
+        	<a href="javascript:;" class="lnk-menu1 on" data-type="ss">
+            	<i class="sg-ft"></i>
+                <span>实时数据</span>
+            </a>
+        </div>
+        <div class="cell">
+        	<a href="javascript:;" class="lnk-menu1" data-type="rb">
+            	<i class="sg-ft2"></i>
+                <span>日报</span>
+            </a>
+        </div>
+        <div class="cell">
+        	<a href="javascript:;" class="lnk-menu1" data-type="zb">
+            	<i class="sg-ft3"></i>
+                <span>周报</span>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

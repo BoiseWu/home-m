@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="format-detection" content="telphone=no, email=no"/>
+
+	<title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/jdsy_1.0.0.js"></script>
+</head>
+
+<body>
+<div class="top-search">
+	<a href="javascript:history.go(-1)" class="back"><i class="icon"></i></a>
+    <div class="frame">
+    	<div class="f-m">
+            <div class="option"><span>产品</span><i class="icon"></i>
+            	<div class="op-tip">
+                	<ul>
+                    <li><a href="#">产品</a></li>
+                    <li><a href="#">供应商</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="s-box"><input type="text"></div>
+        </div>
+    </div>
+    <a href="#" class="search">搜索</a>
+</div>
+
+<!--[D] 排序 -->
+<div class="sort-list">
+    <div class="sort-tap">
+        <ul class="tap">
+        <li class="on" data-sort="1"><a href="javascript:;" class="tap-text">销量<i class="down"></i></a></li>
+        <li data-sort="2"><a href="javascript:;">新品<i class="down"></i></a></li>
+        <li data-sort="3"><a href="javascript:;">价格<i class="down"></i></a></li>
+        </ul>
+    </div>
+</div>
+<div class="search-list">
+<ul>
+
+</ul>
+</div>
+
+<!-- 固定高度加载中 -->
+<div class="loading-bg" style="height:60px">
+    <div class="loading">
+        <div class="loading-tbl">
+            <div class="cell">
+                <div class="bd">
+                    <img src="images/loading.gif" width="22px" height="22px">正在加载...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cover-decision" onclick="close_cover_list()"></div>
+<script type="text/javascript">
+JDSY.ready(function(){
+	
+	var cosID,sortID = 0,words;
+	cosID = JDSY.GetQueryString("cateId") != "" ? JDSY.GetQueryString("cateId") : cosID;
+	sortID = JDSY.GetQueryString("sort") != "" ? JDSY.GetQueryString("sort") : sortID;
+	words = JDSY.GetQueryString("words") != "" ? JDSY.GetQueryString("words") : words;
+	
+	var page_n = 0; // 分页数
+	function fill_list(data){
+		var html_temp = "";
+		var prolist = data.result.products;
+		for(i = 0; i < prolist.length; i ++){
+			html_temp += '<li data-itemID="'+ prolist[i].productId +'"><div class="l-item">';
+			html_temp += '<a href="javascript:;" class="photo"><img src="'+ prolist[i].productImg +'"></a>';
+        	html_temp += '<div class="info"><h3>'+ prolist[i].productName +'</h3><p>'+ prolist[i].productOrigin +'  成交 '+ prolist[i].sales +'笔</p>';
+            html_temp += '<a href="javascript:;"><span><i class="icon"></i></span><em>'+ prolist[i].shopName +'</em></a><em class="price">'+ prolist[i].productPrice +'</em>';
+        	html_temp += '</div></div></li>';
+		}
+		if(page_n == 0)$(".search-list ul").html("");
+		$(".search-list ul").append(html_temp);
+		page_n += 1;
+	}
+	
+	JDSY.util.get(JDSY.query_url.product_list,{"cosId":cosID},fill_list,true);
+	
+	$(".search-list").click(function(event){
+		var li = $(event.target).parents("li");
+		location.href = "product.html?itemID="+ $(li).attr("data-itemID");
+	});
+
+
+    //搜索下拉
+    $(".option span").click(function(e){
+        $(this).parent().toggleClass("open");
+        e.stopPropagation(); 
+    });
+
+    $(".op-tip li a").click(function(){
+        $(this).parents(".option").find("span").text($(this).text());
+        $(".option").removeClass("open");
+    });
+
+    //关闭下拉
+    $(document).click(function(){  
+        $(".option").removeClass("open");
+    });
+
+    //排序
+    $(".sort-tap .tap li").click(function(){
+		$(this).addClass("on").siblings(".on").removeClass("on");
+		
+		if($(this).attr("data-sort") != sortID){
+			page_n = 0;
+			sortID = $(this).attr("data-sort");
+			JDSY.util.get(JDSY.query_url.product_list,{"cosId":cosID,"sort":sortID,"words":words},fill_list,true);
+		}
+		else{
+			if($(this).find("a").html().indexOf("价格") >= 0){
+				page_n = 0;
+				sortID = sortID == 3 ? 4 : 3;
+				$(this).attr("data-sort",sortID);
+				$(this).find("i").attr("class",sortID == 3? "down" : "up");
+				JDSY.util.get(JDSY.query_url.product_list,{"cosId":cosID,"sort":sortID,"words":words},fill_list,true);	
+			}
+		}
+			
+    });
+
+    $(".sort-tap .list li a").click(function(e){
+        $(".sort-tap .tap .tap-text").html($(this).text()+'<i class="down"></i>');
+        $(".cover-decision").hide();
+        $(".sort-tap .list").hide();
+		if($(this).parent("li").attr("data-sort") != sortID){
+			page_n = 0;
+			sortID = $(this).parent("li").attr("data-sort");
+			JDSY.util.get(JDSY.query_url.product_list,{"cosId":cosID,"sort":sortID,"words":words},fill_list,true);
+		}
+    });
+
+    function close_cover_list(){
+        $(".cover-decision").hide();
+        $(".sort-tap .list").hide();
+    }
+	
+	function add_search_word(word){
+		var value = JDSY.cookies.get("hotsch");
+		if(value){
+			var value_arr = value.split("|");
+			for(i=0; i<value_arr.length; i++){
+				if(value_arr[i] == word)return;
+			}
+			JDSY.cookies.set("hotsch",value +"|"+ word)
+		}
+		else{
+			JDSY.cookies.set("hotsch",word)
+		}
+	}
+	
+	$(".search").click(function(){
+		var kinds = $(this).parent("div").find(".option span").html();
+		var keywords = $(this).parent("div").find("input").val();
+		if(keywords != ""){
+			if(kinds == "产品"){
+				add_search_word(keywords);
+				page_n = 0;
+				words = keywords;
+				JDSY.util.get(JDSY.query_url.product_list,{"words":words},fill_list,true);
+			}
+			else{
+				location.href = "supply_list.html?words=" + keywords;
+			}
+		}
+	});
+	
+	$(document).scroll(function(e){
+		if($(document).scrollTop() + $(window).height() >= $(document).height()){
+			JDSY.util.get(JDSY.query_url.product_list,{"cosId":cosID,"sort":sortID,"words":words,"page":page_n},fill_list,true);
+		}
+	});
+});
+</script>
+</body>
+</html>

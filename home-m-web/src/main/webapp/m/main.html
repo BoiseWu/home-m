@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="format-detection" content="telphone=no, email=no"/>
+
+	<title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=index"></script>
+</head>
+
+<body>
+	<div class="main-page">
+
+		<!-- 主页内容 -->
+		<div class="main-content">
+			<div class="focus-slider" id="slider_touch">
+				<div class="hd">
+					<ul></ul>
+				</div>
+				<div class="bd">
+					<ul></ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="no-page" style="display: none">
+		<i class="no-icon icon3"></i>
+		<div class="no-text">
+			<p class="text1">网络请求失败</p>
+			<p class="text2">请检查您的网络<br>重新加载吧</p>
+		</div>
+		<a href="javascript:;" class="no-btn">重新加载</a>
+	</div>
+
+	<!-- 轮播图 -->
+	<script id="banner" type="text/html">
+		<% var len = 5; if(len>list.length){len = list.length}  for(var i = 0; i < len; i++){%>
+		<li><img src="<%:=list[i].picUrl %>"></li>
+		<%}%>
+	</script>
+
+
+	<!--最近要做的事-->
+	<script id="pro_floor" type="text/html">
+		<div class="floor discount-floor">
+			<div class="hd">
+				<a href="javascript:;" data-link="<%:=more_url.link_url %>" data-title="<%:=title %>" data-type="<%:=more_url.type %>"><%:=title %><span class="sp-icon"></span></a>
+			</div>
+			<div class="bd">
+				<ul class="discount-list">
+					<%for(var i = 0; i < list.length; i++){%>
+					<li class="item">
+						<a href="javascript:;" data-type="<%:=list[i].type%>" data-id="<%:=list[i].id%>" data-link="<%:=list[i].link_url%>" data-desc="<%:=list[i].desc%>">
+							aaaa
+						</a>
+					</li>
+					<%}%>
+				</ul>
+			</div>
+		</div>
+	</script>
+</body>
+</html>

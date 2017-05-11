@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=pro_issue"></script>
+<script type="text/javascript" src="../js/plug-in/ajaxfileupload.js"></script>
+</head>
+<body>
+
+<form id="form">
+<div class="m-address release-goods">
+    <input type="hidden" name="itemId" id="itemId">
+    <div class="address-add">
+        <div class="add-item">
+            <div class="tt">请选择平台分类</div>
+            <div class="ct">
+                <div class="ui-flex">
+                	<div class="cell">
+                        <div class="sel-txt">请选择</div>
+                        <select id="select_0" level=0 class="new-select cat" style="top:10px;">
+
+                        </select>
+                        <span class="sp-icon"></span>
+                    </div>
+                    <div class="cell">
+                        <div class="sel-txt">请选择</div>
+                        <select id="select_1" level=1 class="new-select cat" style="top:10px;">
+
+                        </select>
+                        <span class="sp-icon"></span>
+                    </div>
+                    <div class="cell">
+                        <div class="sel-txt">请选择</div>
+                        <select id="select_2" level=2 name="cid" class="new-select cat" style="top:10px;">
+
+                        </select>
+                        <span class="sp-icon"></span>
+                    </div>
+                </div>
+                <p class="error hide"><i class="sp-icon"></i>收货人不能为空</p>
+            </div>
+        </div>
+        <div class="add-item">
+            <div class="tt">类目品牌</div>
+            <div class="ct cell">
+                <div class="sel-txt">请选择</div>
+                <select id="brand" name="brand" class="new-select">
+
+                </select>
+                <span class="sp-icon"></span>
+            </div>
+        </div>
+        <div class="add-group">
+            <h3>上传图片<span class="text-tips">（建议最多上传4张）</span></h3>
+            <div class="img-group">
+            	<ul>
+                    <li>
+                        <div>
+                            <span class="img"><input type="file" id="picInput" name="multipartFiles" title="" class="file"/><img src="images/@img/@100_2.png"></span>
+                            <span class="upload">添加图片</span>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="add-item ui-flex">
+                <div class="tt tt-w60 cell">商品名称</div>
+                <div class="ct cell">
+                    <input type="text" id="itemName" name="itemName" class="ipt" placeholder="请输入商品名称">
+                </div>
+            </div>
+            <div class="add-item ui-flex">
+                <div class="tt tt-w60 cell">销售价格</div>
+                <div class="ct cell">
+                    <input type="number" name="costPrice" class="ipt" placeholder="￥销售价格">
+                </div>
+            </div>
+            <div class="add-item ui-flex">
+                <div class="tt tt-w60 cell">市场价格</div>
+                <div class="ct cell">
+                    <input type="number" name="marketPrice" class="ipt" placeholder="￥市场价格">
+                </div>
+            </div>
+            
+            <div class="add-item ui-flex">
+                <div class="tt tt-w60 cell">库存量</div>
+                <div class="ct cell">
+                    <input type="number" id="inventory" name="inventory" class="ipt" placeholder="请输入库存数量">
+                </div>
+            </div>
+            
+            <div class="add-item ui-flex">
+                <div class="tt tt-w60 cell">商品描述</div>
+                <div class="ct cell">
+                    <textarea id="describe" name="describe" class="new-textarea" placeholder="请输入描述"></textarea>
+                    <p class="error hide"><i class="sp-icon"></i>描述不能为空</p>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="itemAddSource" value="1"/>
+        <a href="javascript:;" class="m-btn">确认发布</a>
+    </div>
+</div>
+</form>
+<script id="img_tpl" type="text/html">
+<li>
+    <div>
+        <span class="img"><img id="pictureImg<%:= index%>" src="<%:= pictureUrl%>"></span>
+        <span class="upload">重新上传</span>
+        <input type="file" id="picInput<%:= index%>" name="multipartFiles" title="" no="<%:= index%>" style="position:absolute;left:0;bottom:0;width:100%;height:100%;opacity:0;filter:alpha(opacity=0);" multiple/>
+        <input type="hidden" id="pictureInputHidden<%:= index%>" name="itemPictures[<%:= index%>].pictureUrl" value="<%:= pictureUrl%>"/>
+        <input type="hidden" name="itemPictures[<%:= index%>].sortNum" value="<%:= index%>"/>
+    </div>
+</li>
+</script>
+<script id="option_tpl" type="text/html">
+    <%for(var i = 0; i < list.length; i++){%>
+    <option  value="<%:=list[i].categoryId%>"><%:= list[i].categoryName%></option>
+    <%}%>
+</script>
+
+<script id="brand_tpl" type="text/html">
+    <%for(var i = 0; i < result.length; i++){%>
+    <option  value="<%:=result[i].brandId%>"><%:= result[i].brandName%></option>
+    <%}%>
+</script>
+</body>
+</html>

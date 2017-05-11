@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="format-detection" content="telphone=no, email=no"/>
+	<title></title>
+	<meta name="keywords" content="B2B" />
+	<meta name="description" content="B2B" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/script_ini.js?pg=order"></script>
+
+	<style type="text/css">
+		.right_status{position: relative; padding:0 10px 0 40px; white-space: nowrap;}
+
+	</style>
+</head>
+<body>
+<div class="mask mt44" style="display: none;">
+	<div class="shadow" style="top: 44px;"></div>
+	<div class="btns">
+		<div>
+			<a class="cur" data-state="1" href="javascript:;">全部订单</a><a href="javascript:;"data-state="10">待付款</a><a href="javascript:;" data-state="20">待发货</a><a href="javascript:;"data-state="30">待收货</a>
+		</div>
+		<div>
+			<a data-state="22" href="javascript:;">退款/退货</a><a href="javascript:;" data-state="100">待评价</a><a href="javascript:;"data-state="99">交易成功</a><a href="javascript:;"data-state="2">交易关闭</a>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="sort-list sort-list-v1">
+	<!--<div class="sort-tap">-->
+		<!--<ul class="tap">-->
+			<!--<li><a href="javascript:;" data-state="0">全部<span class="text-red"></span></a></li>-->
+			<!--<li><a href="javascript:;" data-state="10">待付款<span class="text-red"></span></a></li>-->
+			<!--<li><a href="javascript:;" data-state="20">待发货<span class="text-red"></span></a></li>-->
+			<!--<li><a href="javascript:;" data-state="30">待收货<span class="text-red"></span></a></li>-->
+			<!--<li><a href="javascript:;" data-state="991">待评价<span class="text-red"></span></a></li>-->
+		<!--</ul>-->
+	<!--</div>-->
+</div>
+
+<div class="cart buy-my" style="padding-bottom:0;">
+
+</div>
+<div class="no-page" style="display:none">
+	<i class="no-icon icon4"></i>
+	<div class="no-text">
+		<p> 您还没有相关订单</p>
+	</div>
+</div>
+<!-- 固定高度加载中 -->
+<!--<div class="loading-bg" style="height:60px;display:none">-->
+<!--<div class="loading">-->
+<!--<div class="loading-tbl">-->
+<!--<div class="cell">-->
+<!--<div class="bd">-->
+<!--<img src="images/loading.gif" width="22px" height="22px">正在加载...-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<div class="pop-layer pop-layer-pay" style="display: none;">
+	<div class="shade"></div>
+	<div class="pop-tbl">
+		<div class="section">
+			<div class="pop pop-pay">
+				<div class="pp-hd">安全验证</div>
+				<div class="pp-bd">
+					<p>确认收到商品，请输入B2B支付密码，进行安全验证。<br><span style="color:#e4393c; font-size: 13px">（未设置支付密码请在账户管理中设置）</span></p>
+					<input type="password" class="pay-pw" placeholder="请输入支付密码">
+					<!--p class="err-text">支付密码错误</p-->
+				</div>
+				<div class="btn-area">
+					<a href="javascript:;" class="btn-cancel">取消</a>
+					<a href="javascript:;" class="btn-confirm disabled">确定</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script id="order_list" type="text/html">
+	<%for (var i=0; i<list.length; i++) {%>
+	<div class="h20"></div>
+	<div class="order-list order-list-v2">
+		<h4><a href="#" data-shopId="<%:=list[i].shopId%>" class="link_shop"><i class="icon"></i><span class="text"><%:=list[i].shopName%></span><span class="icon-arr"></span></a><span class="text-r right_status"><%:=list[i].static.state%></span></h4>
+		<div class="order-goods" data-orderId="<%:=list[i].orderId%>" data-refundId="<%:=list[i].refundId%>" data-sellerId="<%:=list[i].sellerId%>" data-buyerId="<%:=list[i].buyerId%>" data-shopId="<%:=list[i].shopId%>" data-paymentPrice="<%:=list[i].paymentPrice%>" data-state="<%:=list[i].state%>" data-yn="<%:=list[i].yn%>">
+			<div class="content">
+				<div class="event"><span class="text2">订单号：<%:=list[i].orderId%></span><span class="text"><%:=get_date(list[i].orderTime).txt%></span></div>
+				<div class="goods-num">
+					<%for(h=0; h<list[i].items.length; h++){%>
+					<div class="img"><span><img src="<%:=pictures[list[i].items[h].skuId]%>" alt=""></span></div>
+					<%}%>
+				</div>
+			</div>
+		</div>
+		<div class="total bdr-b">
+			<span class="all-text"><span class="tot-text">共<%:=list[i].pro_kind%>种<%:=list[i].total%>件商品</span> <span class="tot-text2">总金额：（含运费￥<%:=list[i].freight%>）</span><span class="tot-text3">￥<em><%:=list[i].paymentPrice%></em></span></span>
+		</div>
+		<%if(list[i].static.btn_html != ""){%>
+		<div class="total"><%:=list[i].static.btn_html%></div>
+		<%}%>
+	</div>
+	<%}%>
+</script>
+
+</body>
+
+</html>

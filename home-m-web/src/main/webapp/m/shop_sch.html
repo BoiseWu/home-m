@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=shop"></script>
+</head>
+
+<body>
+<form class="search_form" action="" method="post">
+    <div class="top-search">
+        <a href="javascript:history.go(-1)" class="back"><i class="icon"></i></a>
+        <div class="frame">
+            <div class="f-m">
+                <div class="s-box"><i class="icon-search"></i><input type="text" name="keyword" placeholder="搜索店内商品"></div>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn-ctg"><i class="icon">更多</i><span class="text">分类</span></a>
+        <input type="submit" style="position: absolute; right: -1000px;">
+    </div>
+</form>
+<!--[D] 排序 -->
+<div class="sort-list">
+    <div class="sort-tap">
+        <ul class="tap">
+        <li class="on" data-sort="saleNum"><a href="javascript:;" class="tap-text">销量</a></li>
+        <li data-sort="listing_time"><a href="javascript:;">新品</a></li>
+        <li data-sort="sell_price"><a href="javascript:;">价格<i class="down"></i></a></li>
+        </ul>
+    </div>
+</div>
+<div class="search-list search-list-v1" style="padding-top: 89px;">
+<ul>
+
+</ul>
+</div>
+<a href="javascript:;" class="btn-top">置顶</a>
+
+<div class="cover-decision" style="z-index: 2000"></div>
+
+<div class="category-list" style="position:fixed; z-index: 9999; left:100%; top: 0; bottom: 0; width: 100%; height: 100%;">
+    <ul class="cate-list2"></ul>
+</div>
+
+<!-- 店铺 无商品 -->
+<div class="no-page" style="display:none">
+    <i class="no-icon icon5"></i>
+    <div class="no-text">
+        <p>店铺内暂无商品</p>
+    </div>
+</div>
+
+<script type="text/html" id="cate_list">
+    <%for(var i=0; i<list.length; i++){%>
+    <li><a href="#" data-cate="<%:=list[i].categoryId%>"><%:=list[i].categoryName%></a></li>
+    <%}%>
+</script>
+
+<script type="text/html" id="product_list">
+    <%for(var i=0; i<list.length; i++){%>
+    <li data-itemID="<%:=list[i].itemId%>">
+        <div class="l-item">
+            <a href="javascript:;">
+                <div class="photo">
+                    <img src="<%:=list[i].img%>">
+                </div>
+                <div class="info">
+                    <h3><%:=list[i].itemName%></h3>
+                    <p><%:=list[i].provinceName%> <%:=list[i].cityName%>  成交 <%:=list[i].saleNum%> 笔</p>
+                    <div class="shop"><span><i class="icon"></i></span><em><%:=list[i].shopName%></em></div>
+                    <em class="price">￥<%:=list[i].minSellPrice%>~￥<%:=list[i].maxSellPrice%> <span class="text-num"><%:=list[i].initialAmount%>件起批</span></em>
+                </div>
+            </a>
+        </div>
+    </li>
+    <%}%>
+</script>
+
+</body>
+</html>

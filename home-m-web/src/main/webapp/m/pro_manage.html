@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=pro_manage"></script>
+</head>
+<body>
+
+<div class="sort-list sort-list-v1">
+    <div class="sort-tap">
+        <ul class="tap">
+        <li class="on"><a href="javascript:;" data-status="4">销售中</a></li>
+        <li><a href="javascript:;" data-status="3">待上架</a></li>
+        <li><a href="javascript:;" data-status="2">待审核</a></li>
+        </ul>
+    </div>
+</div>
+<!-- 编辑模式添加class edit-mode -->
+<div class="cart">
+    
+    <div class="order-list order-list-v4 ol_nor">
+    	<ul>
+
+        </ul>
+    </div>
+    
+    
+    </div>
+
+    <div class="add-address">
+        <a href="javascript:;" class="m-btn">发布商品</a>
+    </div>
+
+    <div class="p-acitonbar action-del" style="display: none">
+        <div class="ui-flex ui-flex-v3">
+            <div class="check"><i class="all-check"><span class="cart-checkbox"><i class="icon-chk"></i></span></i><span class="text">全选</span></div>
+            <a href="#" class="btn-mg2-type">
+                <i></i><br>
+                <span class="text">上架</span>
+            </a>
+            <!-- [D] 下架按钮代码 -->
+            <!--a href="#" class="btn-mg2-type2">
+                <i></i><br>
+                <span class="text">下架</span>
+            </a -->
+            <!-- [D] -->
+        </div>
+    </div>
+
+</div>
+
+<div class="no-page" style="display:none">
+    <i class="no-icon icon10"></i>
+    <div class="no-text">
+        <p>暂无商品</p>
+    </div>
+</div>
+
+<script type="text/html" id="pro_list">
+<% for (var i=0; i<list.length; i++) { %>
+<li data-itemId="<%:=list[i].itemId%>">
+    <div class="chk-box">
+        <i class="all-check"><span class="cart-checkbox"><i class="icon-chk"></i></span></i>
+        <div class="goods-box">
+            <div class="chk-box-list">
+                <div class="l-item">
+                    <div class="box">
+                        <div class="photo">
+                            <img src="<%:=formatImg(list[i].mainPictureUrl,100,100)%>">
+                        </div>
+                        <div class="info">
+                            <h3><%:=list[i].itemName%></h3>
+                            <%if(list[i].hasPrice==1){%>
+                            <em class="price">￥<%:=list[i].minSellPrice%> - ￥<%:=list[i].maxSellPrice%></em>
+                            <%}else{%>
+                            <em class="price">暂无报价</em>
+                            <%}%>
+                            <div class="btn-mg-area"><%:=list[i].operate%></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+<% } %>
+</script>
+
+</body>
+
+</html>

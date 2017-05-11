@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=evaluate"></script>
+</head>
+<body>
+
+<div class="m-header">
+	<a href="javascript:history.go(-1);" class="sp-icon go-backs">返回</a>
+    <h1>评价晒单</h1>
+</div>
+<form id="form">
+<div class="buy-evaluate bdr-b">
+	<h3>对商家评价</h3>
+    <p class="p-star"><span class="text">描述相符：</span> <span class="star"><span class="star-df2"><span class="star-yl2" style="width:0%"></span></span></span>
+        <input type="hidden" name="describeScore" value="0">
+    </p>
+    <p class="p-star"><span class="text">服务态度：</span> <span class="star"><span class="star-df2"><span class="star-yl2" style="width:0%"></span></span></span>
+        <input type="hidden" name="serviceScore" value="0">
+    </p>
+    <p class="p-star"><span class="text">到货速度：</span> <span class="star"><span class="star-df2"><span class="star-yl2" style="width:0%"></span></span></span>
+        <input type="hidden" name="sendGoodsScore" value="0">
+    </p>
+</div>
+<div id="goods">
+</div>
+<div class="add-address">
+    <a href="javascript:;" class="m-btn">提交</a>
+</div>
+</form>
+<script id="goods_list" type="text/html">
+<input type="hidden" name="shopId" value="<%:=shopId%>">
+<input type="hidden" name="orderId" value="<%:=orderId%>">
+<input type="hidden" name="sellerId" value="<%:=sellerId%>">
+<%for (var i=0; i<items.length; i++) {%>
+<div class="h20"></div>
+<div class="eva-comm">
+    <div class="eva-text bdr-b">
+        <span class="photo"><img class="img_sku_<%:=items[i].skuId%>" src="" alt=""></span>
+        <span>
+        	<span class="text">评价:</span>
+            <span class="star"><span class="star-df2"><span class="star-yl2" style="width:0%"></span></span></span>
+            <input type="hidden" name="commentBuyerToGoods[<%:=i%>].score" value="0">
+        </span>
+    </div>
+    <div class="textarea-txt">
+        <input type="hidden" name="commentBuyerToGoods[<%:=i%>].ShopId" value="<%:=shopId%>">
+        <input type="hidden" name="commentBuyerToGoods[<%:=i%>].sku" value="<%:=items[i].skuId%>">
+        <input type="hidden" name="commentBuyerToGoods[<%:=i%>].itemId" value="<%:=items[i].itemId%>">
+        <input type="hidden" name="commentBuyerToGoods[<%:=i%>].orderId" value="<%:=orderId%>">
+        <textarea name="commentBuyerToGoods[<%:=i%>].comment" placeholder="请输入评论"></textarea>
+    </div>
+</div>
+<%}%>
+</script>
+</body>
+
+</html>

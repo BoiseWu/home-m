@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=shop_info"></script>
+</head>
+<body>
+<div class="m-header">
+    <a href="javascript:history.go(-1)" class="sp-icon go-backs">返回</a>
+    <h1>公司信息</h1>
+</div>
+<div class="company-info bg">
+    <div class="info-item">
+        <span class="info-l">公司信息：</span>
+        <span class="info-r">&nbsp;</span>
+    </div>
+    <div class="info-item">
+        <span class="info-l">经营范围：</span>
+        <span class="info-r">&nbsp;</span>
+    </div>
+    <div class="info-item">
+        <span class="info-l">店铺名称：</span>
+        <span class="info-r">&nbsp;</span>
+    </div>
+    <div class="info-item">
+        <span class="info-l">所在地区：</span>
+        <span class="info-r">&nbsp;</span>
+    </div>
+    <div class="info-item">
+        <span class="info-l">店铺主营：</span>
+        <span class="info-r limit">&nbsp;</span>
+    </div>
+    <div class="info-item">
+        <span class="info-l">商品数量：</span>
+        <span class="info-r">&nbsp;</span>
+    </div>
+</div>
+<div class="h20"></div>
+<div class="eva-comm eva-comm-v3">
+    <div class="eva-text bdr-b">
+    	<span>
+        	<span class="text">商品信誉:</span>
+            <span class="star mg"><span class="star-df"><span class="star-yl" style="width:0%;"></span></span></span>
+            <em class="data-num">0</em>
+            <span class="data-text">分</span>
+        </span>
+    </div>
+    <dl>
+        <dt>描述相符：</dt>
+        <dd>&nbsp;</dd>
+    </dl>
+    <dl>
+        <dt>服务态度：</dt>
+        <dd>&nbsp;</dd>
+    </dl>
+    <dl>
+        <dt>发货速度：</dt>
+        <dd>&nbsp;</dd>
+    </dl>
+    <dl>
+        <dt>售后评价：</dt>
+        <dd>&nbsp;</dd>
+    </dl>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var $limitText=$(".limit").text();
+        if($limitText.length>20){
+            var sliceText=$limitText.slice(0,20)+"...";
+            $(".limit").text(sliceText);
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=mine"></script>
+</head>
+<body>
+
+<div class="none" style="display: none; min-height: auto; position: absolute; left: 0; top: 44px; bottom: 0; width:100%; border:none;">
+    <div class="tip-img"><span class="icon"></span></div>
+    <p>暂时没有任何消息</p>
+</div>
+<div class="pay-c">
+
+	
+	<script id="msg_buyer" type="text/html">
+    <div class="money-list money-list-v1">
+        <a href="#" class="jd-pay">
+		    <div class="logo"><span><img src="images/img_order.png" alt=""><i class="tip-num"><%:=num%></i></span></div>
+            <div class="info" type=<%:=type%>>
+			    <p class="text">我是买家<span class="text-r"><%:=times.yr%>.<%:=times.mth%>.<%:=times.dt%> <%:=times.tm%>:<%:=times.mn%></span></p>
+                <p class="text3"><%:=mess.context%></p>		
+            </div>
+        </a>
+    </div>
+    </script>
+	
+	<script id="msg_seller" type="text/html">
+    <div class="money-list money-list-v1">
+        <a href="#" class="jd-pay">
+		    <div class="logo"><span><img src="images/img_order.png" alt=""></span><i class="tip-num"><%:=num%></i></div>
+            <div class="info" type=<%:=type%>>
+			    <p class="text">我是卖家<span class="text-r"><%:=times.yr%>.<%:=times.mth%>.<%:=times.dt%> <%:=times.tm%>:<%:=times.mn%></span></p>
+                <p class="text3"><%:=mess.context%></p>		
+            </div>
+        </a>
+    </div>
+    </script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+XSS过滤策略配置
+	1、配置示例
+	<URL pattern="/xss/.*">
+		<PARAMETER name="name,id" filterChar="{}[]&lt;&gt;&quot;&amp;&apos;" action="Remove"/>
+		<PARAMETER name="pin,brand" filterChar="*{}" action="Encode"/>
+	</URL>
+	2、配置说明
+	可配置多组URL标签，一个URL标签可对应多个PARAMETER标签
+	#URL标签{
+			pattern属性:用于配置过滤的URL，按目录匹配，支持正则
+	}
+	#PARAMETER标签{
+			name属性：配置URL对应的参数，参数名全匹配的形式，逗号隔开
+			filterChar属性:配置本组参数过滤的字符名单，配置连续字符即可
+			action属性：配置本组参数过滤字符的处理方式，支持“Remove”和“Encode”两种方式
+	}
+-->
+<!--
+CSRF验证Referer配置
+    1、配置示例
+    <CSRF-PROTECT-URL refererRegex="^http://sjtb\.tuan\.jd\.com.*" errorPage="error.html">
+		brand_save.action,
+	</CSRF-PROTECT-URL>
+	2、配置说明
+	#CSRF-PROTECT-URL标签{
+			refererRegex属性:用于配置验证Referer的正则
+			errorPage属性：用于配置验证不通过的请求的跳转页面
+			标签值：过滤的请求名称（最后一个“/”后的文件名），多个用逗号隔开
+	}
+-->
+<!--
+其他使用说明
+	（1）本配置文档适用于jdcd-security-filter-mini插件（MINI版本）
+	（2）如配置文档不存在，插件不会对任何参数进行过滤。
+	（3）对于xml敏感的字符，请直接使用字符实体进行配置，以下是对应关系
+		<=====&lt;
+		>=====&gt;
+		"=====&quot;
+		&=====&amp;
+		'=====&apos;
+-->
+<JdSecurityConfig>
+	<URL pattern="/.*">
+		<PARAMETER name="*" filterChar="&lt;&gt;&quot;&apos;=_" action="Encode"/>
+	</URL>
+</JdSecurityConfig>

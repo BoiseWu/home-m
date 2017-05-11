@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=mine"></script>
+</head>
+<body>
+
+<div class="pay-c">
+
+</div>
+<div class="none" style="display: none; min-height: auto; position: absolute; left: 0; top: 44px; bottom: 0; width:100%; border:none;">
+    <div class="tip-img"><span class="icon"></span></div>
+    <p>暂时没有任何消息</p>
+</div>
+
+<script id="mess_list" type="text/html">
+    <div class="money-list money-list-v1">
+        <a href="#" class="jd-pay">
+            <div class="info" oid=<%:=mess.toId%>>
+                <p class="text">交易消息<span class="text-r"><%:=times.tm%>:<%:=times.mn%></span></p>
+                <p class="text3"><%:=mess.context%></p>
+            </div>
+        </a>
+    </div>
+</script>
+
+</body>
+</html>

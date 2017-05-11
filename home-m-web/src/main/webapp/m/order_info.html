@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/script_ini.js?pg=order"></script>
+</head>
+<body>
+
+<div class="cart">
+	<h3 class="h3_tit h3_tit-v1 order_tit">订单号：<span class="order_id"></span><span class="text-r"></span></h3>
+
+    <div class="addr">
+    	<div class="box">
+            <div class="flex">
+            	<p class="name">收货人：<span class="receiver"></span> <span class="tel"></span></p>
+                <p class="road">收货地址：</p>
+            </div>
+        </div>
+    </div>
+    <div class="h20"></div>
+    <div class="order-list order-list-v2">
+    	<h4><a href="javascript:;"><i class="icon"></i><span class="text"></span></a></h4>
+    	<div class="order-goods">
+            <div class="content">
+            </div>
+        </div>        
+    </div>
+    
+    <div class="h20"></div>
+    <h3 class="h3_tit h3_tit-v2 payment">支付方式<span class="text-r">在线支付</span></h3>
+    <div class="h20"></div>
+    <div class="total-box">
+        <div class="total-sum">
+            <p>
+                <span>店铺优惠</span>
+                <span class="fl-r promote_price">￥0.00</span>
+            </p>
+            <p>
+                <span>运费</span>
+                <span class="fl-r fright_price">￥0.00</span>
+            </p>
+            <p>
+                <span>发票信息</span>
+                <span class="invoice" style="display: block; float:right">无发票</span>
+                <span class="invoice-title" style="display:none;margin-top:10px"></span>
+            </p>
+            <div class="too-long">
+                <span class="fl">买家留言</span>
+                <div><span class="reason">请周六日送货</span></div>
+            </div>
+            <p class="max">
+                <span>实付款：<span class="text-red payment_price">￥0.00</span></span>
+            </p>
+        </div>
+    </div>
+    <div class="p-acitonbar">
+       <div class="btn-fix"></div>
+    </div>
+</div>
+
+<div class="pop-layer pop-layer-pay" style="display: none;">
+    <div class="shade"></div>
+    <div class="pop-tbl">
+        <div class="section">
+            <div class="pop pop-pay">
+                <div class="pp-hd">安全验证</div>
+                <div class="pp-bd">
+                    <p>确认收到商品，请输入B2B支付密码，进行安全验证。<br><span style="color:#e4393c; font-size: 13px">（未设置支付密码请在账户管理中设置）</span></p>
+                    <input type="password" class="pay-pw" placeholder="请输入支付密码">
+                    <!--p class="err-text">支付密码错误</p-->
+                </div>
+                <div class="btn-area">
+                    <a href="javascript:;" class="btn-cancel">取消</a>
+                    <a href="javascript:;" class="btn-confirm disabled">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="order_info" type="text/html">
+<%for (var i=0; i<product_list.length; i++) {%>
+<div class="goods-num" data-itemID="<%:=product_list[i].itemId%>">
+    <div class="img"><span><img src="<%:=pictures[product_list[i].skuId]%>" alt=""></span></div>
+    <div class="name">
+        <p class="goods-name"><%:=product_list[i].skuName%></p>
+        <p>
+            <%var sku_info = attr[product_list[i].skuId];
+            if(sku_info != undefined){
+                for(h=0; h<sku_info.length;h++){
+                    var attr_val = sku_info[h].attrValueName.replace(/#[0-9a-fA-f]{3,6};/,"");%>
+            <span class="op"><%:=sku_info[h].attrName%>：<%:=attr_val%></span>
+                <%}}else{%>
+        <p><span class="op"><span class="mg-l10"></span></span></p>
+        <%}%>
+        </p>
+        <p><span class="op"><span class="mg-l10">单价：</span>￥<%:=product_list[i].primitivePrice/product_list[i].num%></span></p>
+    </div>
+    <div class="goods-total"><span class="text">￥<%:=product_list[i].primitivePrice%></span><span><%:=product_list[i].num%>件</span></div>
+</div>
+<%}%>
+</script>
+
+</body>
+
+</html>

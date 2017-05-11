@@ -1,0 +1,222 @@
+{
+  "code" : 0,
+  "msg" : "成功",
+  "result" : {
+    "itemPicList": [
+        {
+            "pictureId": 1006377,
+            "itemId": 1001135,
+            "pictureUrl": "http://storage.jd.com/b2b.jcloud.jd.com/20151019182108726?Expires=1602930069&AccessKey=wnJeLEwRa2NR44fu&Signature=iBzozvTZXAuk1Qsa40sKcjomiZ4%3D",
+            "sortNumber": 1,
+            "sellerId": null,
+            "created": null,
+            "modified": null
+        },
+        {
+            "pictureId": 1006389,
+            "itemId": 1001138,
+            "pictureUrl": "http://storage.jd.com/b2b.jcloud.jd.com/20151019184556274?Expires=1602931556&AccessKey=wnJeLEwRa2NR44fu&Signature=bF3UV9%2F2QMSDnmLs4%2B76SYlFCes%3D",
+            "sortNumber": 1,
+            "sellerId": null,
+            "created": null,
+            "modified": null
+        },
+        {
+            "pictureId": 1006393,
+            "itemId": 1001136,
+            "pictureUrl": "http://storage.jd.com/b2b.jcloud.jd.com/20151019182229460?Expires=1602930150&AccessKey=wnJeLEwRa2NR44fu&Signature=D%2FVs6nWyUkkjdadmCwXeY6tXi50%3D",
+            "sortNumber": 1,
+            "sellerId": null,
+            "created": null,
+            "modified": null
+        },
+        {
+            "pictureId": 1006681,
+            "itemId": 1001172,
+            "pictureUrl": "http://storage.jd.com/b2b.jcloud.jd.com/20151102113914606",
+            "sortNumber": 1,
+            "sellerId": null,
+            "created": null,
+            "modified": null
+        },
+        {
+            "pictureId": 1006721,
+            "itemId": 1001182,
+            "pictureUrl": "http://storage.jd.com/b2b.jcloud.jd.com/20151102165236939",
+            "sortNumber": 1,
+            "sellerId": null,
+            "created": null,
+            "modified": null
+        },
+        {
+            "pictureId": 1006741,
+            "itemId": 1001169,
+            "pictureUrl": "http://storage.jd.com/b2b.jcloud.jd.com/20151030172847951",
+            "sortNumber": 1,
+            "sellerId": null,
+            "created": null,
+            "modified": null
+        },
+        {
+            "pictureId": 1006781,
+            "itemId": 1001185,
+            "pictureUrl": "http://storage.jd.com/b2b.jcloud.jd.com/20151102173702441",
+            "sortNumber": 1,
+            "sellerId": null,
+            "created": null,
+            "modified": null
+        }
+    ],
+    "items": [
+        {
+            "itemId": 1001135,
+            "itemName": "供应夏谱高清液晶电视，52寸大电视，厂家直销",
+            "mainPictureUrl": null,
+            "minSellPrice": 2850,
+            "maxSellPrice": 2850,
+            "ad": "供应夏谱高清液晶电视，52寸大电视，厂家直销",
+            "cid": 1000256,
+            "sellerId": 1001085,
+            "shopId": 1000136,
+            "shopName": null,
+            "saleNum": 110,
+            "shopScore": null,
+            "hasPrice": 1
+        },
+        {
+            "itemId": 1001185,
+            "itemName": "乐视超级电视 S40 Air 全配版 智能LED液晶",
+            "mainPictureUrl": null,
+            "minSellPrice": 1299,
+            "maxSellPrice": 1579,
+            "ad": "【测试】",
+            "cid": 1000256,
+            "sellerId": 1001166,
+            "shopId": 1000160,
+            "shopName": null,
+            "saleNum": 44,
+            "shopScore": null,
+            "hasPrice": 1
+        },
+        {
+            "itemId": 1001172,
+            "itemName": "【测试】LG WD-N12435D 6公斤 DD变频滚筒洗衣机 （白色）",
+            "mainPictureUrl": null,
+            "minSellPrice": 0.01,
+            "maxSellPrice": 0.01,
+            "ad": "【测试商品】",
+            "cid": 1000259,
+            "sellerId": 1001166,
+            "shopId": 1000160,
+            "shopName": null,
+            "saleNum": 24,
+            "shopScore": null,
+            "hasPrice": 1
+        },
+        {
+            "itemId": 1001182,
+            "itemName": "美的(Midea) BCD-206TM(E) 206升 三门冰箱 节能保鲜 闪白银",
+            "mainPictureUrl": null,
+            "minSellPrice": 0.02,
+            "maxSellPrice": 0.02,
+            "ad": "【测试商品】",
+            "cid": 1000258,
+            "sellerId": 1001166,
+            "shopId": 1000160,
+            "shopName": null,
+            "saleNum": 6,
+            "shopScore": null,
+            "hasPrice": 1
+        },
+        {
+            "itemId": 1001136,
+            "itemName": "网际超级电视_测试版",
+            "mainPictureUrl": null,
+            "minSellPrice": 0.2,
+            "maxSellPrice": 0.2,
+            "ad": "没有最好，只有最贵",
+            "cid": 1000256,
+            "sellerId": 1001085,
+            "shopId": 1000136,
+            "shopName": null,
+            "saleNum": 2,
+            "shopScore": null,
+            "hasPrice": 1
+        },
+        {
+            "itemId": 1001169,
+            "itemName": "海尔Haier XQG70-B10866 7公斤 变频滚筒洗衣机 防霉抗菌窗垫 6大智能保护",
+            "mainPictureUrl": null,
+            "minSellPrice": 0.09,
+            "maxSellPrice": 1799,
+            "ad": "开门红疯抢仅1799！",
+            "cid": 1000259,
+            "sellerId": 1001166,
+            "shopId": 1000160,
+            "shopName": null,
+            "saleNum": 0,
+            "shopScore": null,
+            "hasPrice": 1
+        },
+        {
+            "itemId": 1001138,
+            "itemName": "润滑油",
+            "mainPictureUrl": null,
+            "minSellPrice": 22,
+            "maxSellPrice": 33,
+            "ad": "化工材料",
+            "cid": 1000256,
+            "sellerId": 1001085,
+            "shopId": 1000136,
+            "shopName": null,
+            "saleNum": 0,
+            "shopScore": null,
+            "hasPrice": 1
+        }
+    ],
+    "shopInfoList": [
+        {
+            "sellerId": 1001085,
+            "shopId": 1000136,
+            "shopName": "天津网际科技旗舰店",
+            "provinceCode": "11",
+            "cityCode": "1101",
+            "provinceName": "天津市",
+            "cityName": "市辖区",
+            "initialAmount": 1,
+            "shopUrl": "netskys",
+            "shopLogoUrl": null,
+            "shopScore": null,
+            "saleNum": null,
+            "goodEvaluateNum": null,
+            "platformId": null,
+            "cidList": null,
+            "pageIndex": null,
+            "pageSize": null,
+            "orderColumn": null,
+            "orderType": null
+        },
+        {
+            "sellerId": 1001166,
+            "shopId": 1000160,
+            "shopName": "尼古拉斯赵四",
+            "provinceCode": "11",
+            "cityCode": "1101",
+            "provinceName": "北京市",
+            "cityName": "市辖区",
+            "initialAmount": 4,
+            "shopUrl": "http://shop.b2b.jcloud.com/zhaosi",
+            "shopLogoUrl": null,
+            "shopScore": null,
+            "saleNum": null,
+            "goodEvaluateNum": null,
+            "platformId": null,
+            "cidList": null,
+            "pageIndex": null,
+            "pageSize": null,
+            "orderColumn": null,
+            "orderType": null
+        }
+    ]
+}
+}

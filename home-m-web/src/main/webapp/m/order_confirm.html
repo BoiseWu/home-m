@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=order"></script>
+</head>
+<body>
+
+<div class="m-header">
+    <a href="javascript:history.go(-1);" class="sp-icon go-backs">返回</a>
+    <h1>确认订单</h1>
+</div>
+<div class="mask mt44" style="display: none;">
+    <div class="shadow"></div>
+
+</div>
+<div class="cart pd136">
+
+	<div class="addr" data-addressId="">
+    	<div class="box">
+        	<div class="icon">
+            	<span></span>
+            </div>
+            <div class="flex">
+            	<div class="has_addr" style="display:none;">
+                    <p class="name">收货人：<span class="receiver"></span> <span class="tel"></span></p>
+                    <p class="road">收货地址：<span></span></p>
+                </div>
+                <p class="no-addr" style="display:none;">请新建收货地址以确保商品顺利抵达</p>
+            </div>
+            <div class="arr">
+            	<span></span>
+            </div>
+        </div>
+    </div>
+    <div class="h20"></div>
+    <h3 class="h3_tit">进货清单</h3>
+    <div class="order_detail" style="visibility:hidden;">
+
+    </div>
+
+    <div class="my-item" style="display:block;">
+        <div class="hd">
+            <a href="javascript:;">
+                <div class="text1">优惠券<span class="coupon"><span>0</span>张可用</span></div>
+                <div class="text2">未使用</div>
+                <span class="sp-icon"></span>
+            </a>
+        </div>
+    </div>
+    <div class="h20"></div>
+    <div class="invoice">
+        <div class="iv-m" >
+            <span>开具发票</span>
+            <div class="btn-invoice"></div>
+        </div>
+        <div class="iv-m invoice-title" style="display: none">
+            <div class="ui-flex">
+                <span class="w45">开票抬头：</span>
+                <span class="cell"><input type="text" class="ipt-type" placeholder=""></span>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="p-acitonbar p-acitonbar-v1">
+        <div class="info">
+            <p class="info-msg">由于收货地区不同，价格和数量可能会改变</p>
+            <p>
+                <span>优惠总计：</span>
+                <span class="fl-r">￥</span>
+            </p>
+            <p>
+                <span>运费总计：</span>
+                <span class="fl-r">￥0.00</span>
+            </p>
+        </div>
+        <div class="ui-flex ui-flex-v3">
+            <div class="cell order-price-box"><span class="text">实付款：</span><span class="order-price">￥</span></div>
+            <a href="javascript:;" class="cell btn-pay">提交订单</a>
+        </div>
+    </div>
+</div>
+
+<div class="p-cover" style="z-index: 99999">
+
+    <!-- coupon select page start -->
+    <div class="option-hd">
+        <div class="text">
+            <span class="tt pro_name">使用优惠券</span>
+        </div>
+        <a href="javascript:;" class="close sp-icon">关闭</a>
+    </div>
+    <div class="sort-list sort-list-v1">
+        <div class="sort-tap">
+            <ul class="tap">
+                <li class="on"><a href="javascript:;" data-state="availableCoupons">可用优惠券<span style="display:none">（0）</span></a></li>
+                <li><a href="javascript:;" data-state="unavailableCoupons">不可用优惠券<span style="display:none">（0）</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="coupon-sel-list" style="position: absolute; left:0; right:0; top:47px; bottom: 60px; overflow: hidden;">
+        <div>
+
+        </div>
+    </div>
+
+
+    <div class="add-address">
+        <a href="javascript:;" class="m-btn">确认</a>
+    </div>
+    <!-- coupon select page end -->
+</div>
+
+<script id="order_list" type="text/html">
+<div class="order-list order-list-v1">
+	<h4><span class="text-red">订单<%:=order_no%>：</span><span class="text order-list-shop-id" data-shopId="<%:=order.shopId%>"><%:=order.shopName%></span></h4>
+	<div class="pro_list"><%:=pro_list%></div>
+	<div class="total-sum">
+		<p><span>店铺优惠</span><span class="fl-r">￥<%:=order.totalPromotionDiscount4Shop%></span></p>
+		<p><span>运费</span><span class="fl-r">￥<%:=order.freight4Seller%></span></p>
+		<p><span>买家留言：</span><span><input type="text" placeholder="选填，给商家留言" class="memo"></span></p>
+		<p class="max"><span><%:=order.totalNum%>件</span><span class="bar">|</span><span>小计：<span class="text-red">￥<%:=order.totalPromotionPrice4Shop%></span></span></p>
+	</div>
+</div>
+<div class="h20"></div>
+</script>
+
+<script id="product_list" type="text/html">
+	<div class="goods-num" data-itemId="<%:=product.itemId%>">
+		<div class="img"><span><img src="<%:=product.imgUrl%>" alt=""></span></div>
+		<div class="name">
+			<p class="goods-name"><%:=product.name%></p>
+			<p>
+				<%for(var h=0; h<product.skuAttributeNames.length; h++){
+					var val = product.skuAttributeNames[h].replace(/:#[0-9a-fA-F]{3,6}/,"").replace(":","：");%>
+				<span class="op"><%:=val%></span>
+				<%}%>
+			</p>
+			<p><span class="op"><span class="mg-l10">单价：</span>￥<%:=get_price(product.num, product.skuPricesVo)%></span></p>
+		</div>
+	</div>
+	<div class="price"><span class="text">￥<%:=product.price.promotionPrice%></span><span class="text2"><%:=product.num%>件</span></div>
+</script>
+
+<script id="coupon_sel_list" type="text/html">
+
+    <%if (coupon_list.length == 0) {%>
+    <div class="no-page">
+        <i class="no-icon icon8"></i>
+        <div class="no-text">
+            <p>
+                <% if (coupon_state == "availableCoupons"){%>
+                    很遗憾，您暂无可使用优惠券
+                <%} else {%>
+                    您暂无不可用优惠券
+                <%}%>
+            </p>
+        </div>
+    </div>
+    <%} else {%>
+        <%for (var i = 0; i < coupon_list.length; i++) {%>
+            <%var coupon = coupon_list[i]%>
+            <div class="h20"></div>
+            <% if (coupon_state == "availableCoupons") {%>
+                <div class="cp-category" data-couponId="<%:=coupon.id%>" data-denomination="<%:=coupon.denomination/100%>">
+            <%} else {%>
+                <div class="cp-category cp-category-off">
+            <%}%>
+                <div class="ui-flex" >
+                    <div class="w50">
+                        <i class="all-check"><span class="cart-checkbox"><i class="icon-chk"></i></span></i>
+                    </div>
+                    <div class="cell" >
+                        <p class="text"><i class="icon"></i>满<%:=comm_fun.get_format_price(coupon.startFee)%>减<%:=comm_fun.get_format_price(coupon.denomination)%></p>
+                        <p class="text2">使用范围:<%:=coupon.applicable_scope%></p>
+                        <p class="text2">使用期限:
+                            <span class="date"><%:=comm_fun.get_date(coupon.effectiveStartTime).ymd%>-<%:=comm_fun.get_date(coupon.effectiveEndTime).ymd%></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <%}%>
+    <%}%>
+</script>
+
+</body>
+
+</html>

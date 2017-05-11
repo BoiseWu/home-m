@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd 
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+    <!--<bean id="checkUserTypeInterception"
+          class="com.jd.b2b.m.inteceptor.CheckUserTypeInterception"/>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/m/cart.html"/>
+            <mvc:mapping path="/m/user.html"/>
+            <mvc:mapping path="/m/order.html"/>
+            <mvc:mapping path="/m/order_info.html"/>
+            <mvc:mapping path="/m/message.html"/>
+            <mvc:mapping path="/m/address.html"/>
+            <mvc:mapping path="/m/addr_add.html"/>
+            <mvc:mapping path="/m/addr_edit.html"/>
+            <mvc:mapping path="/m/order_confirm.html"/>
+            <mvc:mapping path="/m/addr_sel.html"/>
+            <mvc:mapping path="/m/payment.html"/>
+            <mvc:mapping path="/m/pay_succ.html"/>
+            <mvc:mapping path="/m/favorite.html"/>
+            <mvc:mapping path="/m/coupon.html"/>
+            <mvc:mapping path="/m/history.html"/>
+            <mvc:mapping path="/m/comment.html"/>
+            <mvc:mapping path="/m/statistics.html"/>
+            <mvc:mapping path="/m/update_phone.html"/>
+            <mvc:mapping path="/m/updatepass.html"/>
+            <mvc:mapping path="/m/updatepaypass.html"/>
+            <mvc:mapping path="/m/msg_center.html"/>
+            <mvc:mapping path="/m/coupon_list.html"/>
+            <ref bean="authHtmlInterceptor"/>
+        </mvc:interceptor>
+
+    </mvc:interceptors>-->
+</beans>

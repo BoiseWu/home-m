@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=seller"></script>
+</head>
+<body>
+
+<div class="order-list order-list-v2">
+    <div class="order-goods">        	
+        <div class="content">
+            <div class="event">
+                <span class="text2">订单号：<span class="orderId">201510100001</span></span><span class="text order_time">2015-10-28  10:23</span>
+            </div>
+            <div class="goods-num">
+                <div class="img"><span><img src="images/@img/@138.png" alt=""></span></div>
+                <div class="img"><span><img src="images/@img/@138.png" alt=""></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="h20"></div>
+<div class="eva-comm eva-comm-v1">
+	<div class="eva-text bdr-b">
+    	<span>
+        	<span class="text">评价:</span>
+            <span class="star"><span class="star-df2"><span class="star-yl2" style="width:0%"></span></span></span>
+        </span>
+        <input type="hidden" name="orderId" >
+        <input type="hidden" name="score" >
+    </div>
+    <div class="textarea-txt">
+    	<textarea placeholder="请输入评论" name="comment"></textarea>
+    </div>
+</div>
+
+<div class="add-address">
+    <a href="javascript:;" class="m-btn">提交</a>
+</div>
+
+<script id="pro_img" type="text/html">
+<%for (var i=0; i<list.length; i++) {%>
+<div class="img"><span><img src="<%:=formatImg(pictures[list[i].skuId],69,69)%>" alt=""></span></div>
+<%}%>
+</script>
+</body>
+
+</html>

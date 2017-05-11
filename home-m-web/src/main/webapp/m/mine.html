@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=mine"></script>
+</head>
+<body>
+
+<div class="m-my buy-my">
+    <div class="user">
+        <!-- 未登录 -->
+        <div class="user-box unlogin" style="display:none;">
+            <div class="user-photo">
+                <img src="images/user.png">
+            </div>
+            <div class="bottom">
+                <a href="javascript:;" class="link_login">登 录</a>
+                <a href="javascript:;" class="link_regi">注 册</a>
+            </div>
+        </div>
+
+        <!-- 已登录 -->
+        <div class="user-box logined" style="display:none;">
+            <div class="user-photo">
+                <img src="images/user.png">
+            </div>
+            <div class="bottom">
+                <span class="name"></span>
+            </div>
+            <a href="#" class="btn-manage">设置</a>
+        </div>
+    </div>
+
+    <div class="buyer">
+        <div class="my-item">
+            <div class="hd bdr-b">
+                <a href="javascript:;" class="link_photo">
+                    <div class="text1"><i class="icon1"></i>相册</div>
+                    <div class="text2">个人相册</div>
+                    <span class="sp-icon"></span>
+                </a>
+            </div>
+            <div class="hd">
+                <a href="javascript:;" class="link_history" style="display: none">
+                    <div class="text1"><i class="icon2"></i>浏览历史</div>
+                    <div class="text2">最近逛的商品</div>
+                    <span class="sp-icon"></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="my-item" style="display: none">
+            <div class="hd bdr-b" style="display:block">
+                <a href="javascript:;" class="link_message" style="display: none">
+                    <div class="text1"><i class="icon4"></i>我的消息</div>
+                    <div class="text2">查看消息</div>
+                    <span class="sp-icon"></span>
+                </a>
+            </div>
+            <div class="hd bdr-b" style="display: none">
+                <a href="javascript:;" class="link_ticket">
+                    <div class="text1"><i class="icon5"></i>券</div>
+                    <div class="text2">查看券</div>
+                    <span class="sp-icon"></span>
+                </a>
+            </div>
+            <div class="hd">
+                <form action="/m/public/getAuthCodeImg" method="post"   enctype="multipart/form-data">
+                    <input type="file"   name="uploadfile" />
+                    <input type="submit" value="提交" />
+                </form>
+                <!--<a href="javascript:;" class="link_address">
+                    <div class="text1"><i class="icon3"></i>收货地址</div>
+                    <div class="text2">管理收货地址</div>
+                    <span class="sp-icon"></span>
+                </a>-->
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>

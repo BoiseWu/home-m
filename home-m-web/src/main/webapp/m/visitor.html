@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>B2B</title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/script_ini.js?pg=mine"></script>
+
+</head>
+<body>
+<!--<div class="m-header">-->
+    <!--<a href="javascript:;" class="sp-icon go-backs">返回</a>-->
+    <!--<h1>意见反馈</h1>-->
+<!--</div>-->
+
+<div class="pop-layer2" style="display: none;">
+    <div class="pop-tbl">
+        <div class="section">
+            <div class="pop3">
+                <i class="sp-icon icon2"></i>
+                <p>提交成功</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="feedback-v2">
+    <form id="form">
+
+    <dl>
+        <dt><span>请您描述使用时要反馈的问题</span></dt>
+        <!--给dd标签加class="feedback-fail" 可显示错误信息-->
+        <dd class="feedback-fail">
+            <textarea name="content" class="problem" placeholder="如果您在使用产品时，有什么好或者不好的地方，请大声说出来！我们会关注您的反馈，不断优化产品，为您提供更好的服务！"></textarea>
+            <p class="feedback-error" style="display: none;"><i></i><span>反馈内容不能为空</span></p>
+        </dd>
+    </dl>
+    <!--<dl>-->
+        <!--<dt>验证码</dt>-->
+        <!--<dd>-->
+            <!--<input type="text" name="codes" placeholder="请输入右图中的字符">-->
+            <!--<a href="javascript:;" class="codes"><span><img src="#"></span></a>-->
+            <!--<p class="feedback-error" style="display: none;"><i></i><span>验证码不能为空</span></p>-->
+            <!--<p>我们会不定期邀请用户参与面对面的交流。如果您有意参与，请填写如下信息，方便我们与您联系，谢谢！(信息仅作为内部资料绝不外泄)</p>-->
+
+        <!--</dd>-->
+    <!--</dl>-->
+    <dl>
+        <dt>姓名</dt>
+        <dd><input type="text" name="name" placeholder="请输入您的姓名">
+        </dd>
+    </dl>
+    <dl>
+        <dt>手机</dt>
+        <dd><input type="text" name="mobile" placeholder="选填"></dd>
+        <p class="err-text" style="display:none;margin-top:5px;color:#e4393c;">手机号格式不正确</p>
+    </dl>
+        </form>
+</div>
+
+<div class="submit">
+    <a href="javascript:;">提交</a>
+</div>
+<script type="text/javascript">
+    //自动关闭弹出层
+    var cp = setTimeout(close_pop,3000);
+    function close_pop(){
+        $(".pop-layer2").remove();
+    }
+</script>
+</body>
+</html>

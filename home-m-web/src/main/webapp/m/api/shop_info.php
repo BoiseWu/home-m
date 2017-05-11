@@ -1,0 +1,1 @@
+{"code":0,"msg":"成功","result":{"shopId":1000136,"shopName":"天津网际科技旗舰店","shopLogo":"http://storage.jd.com/b2b.jcloud.jd.com/20151019193113606?Expires=1602934274&AccessKey=wnJeLEwRa2NR44fu&Signature=JYqV1r0YWYPzUUw8tNVq6BUX%2FM4%3D","shopBanner":"","shopAddress":"东城区","shopLevel":4.0,"introduce":"天津网际科技旗舰店","shopCount":12}}

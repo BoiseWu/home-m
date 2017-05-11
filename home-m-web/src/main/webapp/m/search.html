@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="format-detection" content="telphone=no, email=no"/>
+
+	<title></title>
+	<meta name="keywords" content="B2B" />
+	<meta name="description" content="B2B" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/script_ini.js?pg=search"></script>
+</head>
+
+<body>
+<form class="search_form" action="" method="post">
+	<div class="top-search">
+		<a href="javascript:history.go(-1)" class="back"><i class="icon"></i></a>
+		<div class="frame">
+			<div class="f-m">
+				<div class="option"><span>产品</span><i class="icon"></i>
+					<div class="op-tip">
+						<ul>
+							<li><a href="#">产品</a></li>
+							<li><a href="#">供应商</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="s-box" style="padding-left:0"><i class="icon-search" style="display: none"></i><input type="text" name="keyword" placeholder=""></div>
+			</div>
+		</div>
+		<a href="javascript:;" class="btn-more"><i class="icon">更多</i></a>
+		<input type="submit" style="position: absolute; right: -1000px;">
+	</div>
+</form>
+
+<div class="re-menu" style="height:0; overflow: hidden; display: none">
+	<ul>
+		<li data-link="fav"><i class="icon"></i>进入收藏夹</li>
+		<li data-link="home"><i class="icon2"></i>首页</li>
+	</ul>
+</div>
+
+<div class="history" style="display:none">
+	<div class="history-box">
+		<div class="title">历史</div>
+		<div class="history-list">
+			<ul>
+			</ul>
+		</div>
+	</div>
+	<a href="#" class="btn-history">清空历史搜索</a>
+</div>
+
+<div class="sort-list" style="display:none">
+	<div class="sort-tap">
+		<ul class="tap">
+			<li class="on" data-sort="saleNum"><a href="javascript:;" class="tap-text">销量</a></li>
+			<li data-sort="listing_time"><a href="javascript:;">新品</a></li>
+			<li data-sort="sell_price"><a href="javascript:;">价格<i class="up"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="search-list search-list-v1" style="display: none">
+	<div class="none" style="display:none;padding-top: 44px;">
+		<div class="tip-img"><span class="icon"></span></div>
+		<p>抱歉，没找到符合条件的商品</p>
+	</div>
+	<ul>
+
+	</ul>
+</div>
+
+<div class="cover-decision" style="z-index: 900"></div>
+
+<!-- 固定高度加载中 -->
+<div class="loading-bg" style="height:60px;display:none;top:40px">
+	<div class="loading">
+		<div class="loading-tbl">
+			<div class="cell">
+				<div class="bd">
+					<img src="images/loading.gif" width="22px" height="22px">正在加载...
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/html" id="supply_list">
+	<%for(var i=0; i<list.length; i++){%>
+	<li data-shopID="<%:=list[i].shopId%>">
+		<div class="l-item l-item-v1">
+			<a href="javascript:;">
+			<div href="#" class="photo"><img src="<%:=list[i].shopLogo%>"></div>
+			<div class="info">
+				<h3><%:=list[i].shopName%></h3>
+				<p class="sels">经营类目：<%:=list[i].introduce%></p>
+				<p class="star"><span class="star-df"><span class="star-yl" style="width:<%:=(list[i].shopLevel * 20)%>%"></span></span></p>
+				<p>商品数量 <%:=list[i].shopCount%> 笔</p>
+			</div>
+			</a>
+		</div>
+	</li>
+	<%}%>
+</script>
+
+<script type="text/html" id="product_list">
+	<%for(var i=0; i<list.length; i++){%>
+	<li data-itemID="<%:=list[i].itemId%>">
+		<div class="l-item">
+			<a href="javascript:;">
+				<div class="photo">
+					<img src="<%:=list[i].img%>">
+				</div>
+				<div class="info">
+					<h3><%:=list[i].itemName%></h3>
+					<p><%:=list[i].provinceName%> <%:=list[i].cityName%>  成交 <%:=list[i].saleNum%> 笔</p>
+					<div class="shop"><span><i class="icon"></i></span><em><%:=list[i].shopName%></em></div>
+					<%if(list[i].hasPrice==1){%>
+					<em class="price">￥<%:=list[i].minSellPrice%>~￥<%:=list[i].maxSellPrice%> <span class="text-num"><%:=list[i].initialAmount%>件起批</span></em>
+					<%}else{%>
+					<em class="price">暂无报价</em>
+					<%}%>
+				</div>
+			</a>
+		</div>
+	</li>
+	<%}%>
+</script>
+
+</body>
+</html>

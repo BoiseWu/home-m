@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="format-detection" content="telphone=no, email=no"/>
+
+	<title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=pro"></script>
+</head>
+
+<body>
+	<div class="m-header fixed-header">
+	    <a href="javascript:history.go(-1);" class="sp-icon go-backs">返回</a>
+	    <h1>商品详情</h1>
+	</div>
+
+	<div class="product-page">
+		<div class="m-scroll" style="padding-bottom: 58px;">
+			<div id="slider_showcase" class="p-showcase">
+				<div class="hd">
+					<ul></ul>
+				</div>
+				<div class="bd">
+					<ul>
+						
+					</ul>
+				</div>
+				<div class="pageState"></div>
+			</div>
+			<div class="p-basic-info">
+				<div class="p-title ui-flex">
+					<div class="cell">
+						<h2 class="pro_name"></h2>
+					</div>
+					<div class="cell share">
+						<a href="javascript:;" class="share-btn">
+							<i class="sp-icon"></i>
+							<span class="text">分享</span>
+						</a>
+					</div>
+				</div>
+				<div class="p-price ui-flex"></div>
+				<div class="p-adds ui-flex">
+					<div class="cell" style="max-width:30%">运费<span class="ml5 deli_charge"></span></div>
+					<div class="cell" style="max-width:20%">成交<span class="ml5 sales"></span></div>
+					<div class="cell" style="text-align: right">发货<span class="ml5 orign"></span></div>
+				</div>
+			</div>
+			     
+            <div class="p-service">
+            	<ul>
+                <li><i class="icon1"></i><span>诚信保障</span></li>
+                <li><i class="icon2"></i><span>实拍认证</span></li>
+                <li><i class="icon3"></i><span>准时发货</span></li>
+                <li><i class="icon4"></i><span>包退包换</span></li>
+                </ul>
+            </div>
+            
+            <div class="p-spec">
+                <div class="coupondiv" style="display:none">
+                    <div class="p-coupon ui-flex">
+                        <div class="cell tt">领券</div>
+                        <div class="cell">
+                            <span class="getcoupon coupon2">领取优惠券</span>
+                        </div>
+                    </div>
+                </div>
+				<div class="p-coupon p-coupon-v1 ui-flex">
+					<div class="cell tt2">购买限制</div>
+					<div class="hunpi cell">
+					</div>
+				</div>
+                <div class="p-coupon p-coupon-v1 ui-flex">
+					<div class="cell tt2">&nbsp;</div>
+					<div class="qipi cell">
+					</div>
+				</div>
+			</div>
+            
+			<div class="p-spec">
+				<div class="p-promotion ui-flex">
+					<div class="cell tt">促销</div>
+					<div class="cell prom_info">
+						<div class="item"></div>
+					</div>
+				</div>
+				<div class="p-action ui-flex">
+					<div class="cell tt">已选</div>
+					<div class="cell">
+						<div class="text proper_sel"><span class="sp-icon"></span></div>
+					</div>
+				</div>
+
+				<div class="p-promotion promotion-v1 ui-flex">
+					<div class="cell tt">配送至</div>
+					<div class="address cell pt">
+					</div>
+				</div>
+			</div>
+            
+            
+            <div class="p-spec">
+                <!-- S 跳转图文详情 -->
+				<div class="p-more">
+					<a href="javascript:;" class="link_detail">图文详情</a>
+					<span class="sp-icon"></span>
+				</div>
+				<!-- E 跳转图文详情 -->
+                <div class="p-evaluate ui-flex">
+                	<div class="cell tt">评价</div>
+					<div class="comment cell pt"></div>
+                </div>
+			</div>
+            
+			<div class="p-shop">
+				<div class="p-shop-info">
+					<a href="javascript:;" class="ui-flex shop_link">
+						<div class="cell logo">
+							<div class="img-box"><img></div>
+						</div>
+						<div class="cell">
+							<div class="text">
+								<span class="text-1 shop_name"></span>
+								<span class="text-2 shop_slogn"></span>
+								<span class="sp-icon"></span>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="p-shop-action ui-flex">
+					<a href="javascript:;" class="all-product cell"><i class="sp-icon"></i>全部货品</a>
+					<a href="javascript:;" class="go-shop cell"><i class="sp-icon"></i>店铺上新</a>
+				</div>
+			</div>
+            
+		</div>
+	</div>
+
+
+	
+	<div class="p-acitonbar">
+		<div class="ui-flex">
+			<div class="cell cart">
+				<a href="javascript:;">
+					<i class="sp-icon"></i>
+					<span class="text">进货车</span>
+					<em class="num">0</em>
+				</a>
+			</div>
+            <!-- [D] 已收藏时加class on-->
+            <a href="javascript:;" class="collection cell">
+            	<i class="icon"></i><span class="favstr">收藏</span>
+            </a>
+			<a href="javascript:;" class="add-cart cell">加入进货车</a>
+			<a href="javascript:;" class="buy cell">立即购买</a>
+            <a href="javascript:;" class="btn_enter cell" style="display:none">确定</a>
+		</div>
+	</div>
+
+	<div class="p-cover">
+		<div class="option-hd">
+			<div class="img-box">
+				<img src="">
+			</div>
+			<div class="text">
+				<span class="tt pro_name"></span>
+				<span class="price">￥0~￥0</span>
+			</div>
+			<a href="javascript:;" class="close sp-icon">关闭</a>
+		</div>
+		<div class="option-bd">
+			<div class="m-scroll">
+            	<div class="pro_box">
+				
+                </div>
+				<div class="p-count">
+					<h3>数量</h3>
+                    <div class="number">
+                        <a href="javascript:;" class="decrease"><i class="sp-icon">-</i></a>
+                        <input type="number" class="num" value="1" min="1" step name="quantity">
+                        <a href="javascript:;" class="increase"><i class="sp-icon">+</i></a>
+                    </div>
+                    <span class="stock">库存 0 件</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="position_layer" style="position:fixed; z-index: 9999; left:100%; top: 0; bottom: 0; width: 90%; height: 100%;">
+		<h4 class="title"><a href="#" data-level="1"><i class="J_ping" ></i></a><span>配送至</span></h4>
+		<div class="posi_scroll">
+			<div>
+				<ul class="list_province view" data-level="1"></ul>
+				<ul class="list_city" data-level="2"></ul>
+				<ul class="list_area" data-level="3"></ul>
+			</div>
+		</div>
+	</div>
+
+	<!--div class="menu_sidebar" id="puller">
+		<div class="list_content_mask" onclick="close_sidebar()"></div>
+		<div class="sidebar-content">
+			<div class="sidebar-header region-title"> <span id="region-back-arrow" class="region-title-back" data-level="0"> <i class="J_ping" ></i> </span> <span class="region-title-name">配送至</span> </div>
+			<div class="sidebar-items-container region-list-group">
+				<div class="region-wrapper">
+					<ul id="jdDeliverList1" level="1" class="cur sidebar-list sidebar-categories region-list J_ping">
+						<li id="1"><i class="tick"></i><a name="region1"></a><span>北京</span><i class="i-chk"></i></li>
+					</ul>
+					<ul id="jdDeliverList2" level="2" class="sidebar-list sidebar-categories region-list J_ping">
+						<li id="72" action="getCountys"><i class="tick"></i><a name="region72"></a><span>朝阳区</span><i class="i-chk"></i></li>
+					</ul>
+					<ul id="jdDeliverList3" level="3" class="sidebar-list sidebar-categories region-list J_ping">
+						<li id="2819" action="getTowns"><i class="tick"></i><a name="region2819"></a><span>三环到四环之间</span><i class="i-chk"></i></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div-->
+
+	<div class="cover-decision"></div>
+    <div class="wx-share">
+        <img src="images/share.png">
+    </div>
+
+	<script id="scroll_img" type="text/html">
+	<%for(var i=0; i<list.length; i++){%>
+	<li><img src="<%:=comm_fun.formatImg(list[i],320,320)%>"></li>
+	<%}%>
+	</script>
+
+	<script id="step_price" type="text/html">
+		<%for(var i=0; i<price_list.length; i++){%>
+		<div class="cell">
+			<%if(i == price_list.length - 1){%>
+			<span class="text"> 大于 <%:=price_list[i].minNum%>个</span>
+			<%}else{%>
+			<span class="text"><%:=price_list[i].minNum%> ~ <%:=price_list[i].maxNum%>个</span>
+			<%}%>
+			<span class="price">￥<%:=price_list[i].sellPrice%></span>
+		</div>
+		<%}%>
+	</script>
+
+	<script id="sku_list" type="text/html">
+		<div class="sku-group">
+			<h3><%:=attrName%></h3>
+			<ul class="items">
+				<%for (var p in attrValue) {
+				var attrValueName = attrValue[p];
+				if (attrValueName.indexOf(':') > 0) {
+				var arr = attrValueName.split(':');
+				attrValueName = arr[1];
+				}
+				if (selectSku.indexOf(o + ':' + p + ";") >= 0){%>
+				<li data-attrID="<%:=attr_id%>" data-valueID="<%:=p%>" class="checked"><%:=attrValueName%></li>
+				<%}else{%>
+				<li data-attrID="<%:=attr_id%>" data-valueID="<%:=p%>"><%:=attrValueName%></li>
+				<%}}%>
+			</ul>
+		</div>
+	</script>
+
+	<script id="comment" type="text/html">
+			<span class="text"><%:=number%>人已评价</span>
+							<span class="star">
+								<span class="star-df"><span class="star-yl" style="width:<%:=score*20%>%"></span></span>
+								<span><%:=score%>分</span>
+							</span>
+			<span class="sp-icon"></span>
+	</script>
+
+
+    <script id="hunpi" type="text/html">
+        <% var qp = "";
+        if(shopInfo.mutilprice == 1){
+            if(shopInfo.priceMin){
+            qp += "全店满" + shopInfo.priceMin + "元";
+            }
+            if(shopInfo.mountMin){
+                var lk = (shopInfo.initialCondition == 2) ? " 且 ":" 或 ";
+                qp += (qp != "") ? lk : "";
+                qp +=  shopInfo.mountMin + "件";
+            }
+            qp += "可混批采购";
+        }
+        else{
+        qp += "无";
+        }%>
+        <div class="text">混批：<%:=qp%><span class="sp-icon on"></span></div>
+    </script>
+
+    <script id="qipi" type="text/html">
+        <% var qp = "";
+        if(shopInfo.initialPrice){
+        qp += "订单总价大于" + shopInfo.initialPrice + "元";
+        }
+        if(shopInfo.initialMount){
+            var lk = (shopInfo.initialCondition == 2) ? " 且 ":" 或 ";
+            qp += (qp != "") ? lk : "";
+            qp += " 货品总数大于" + shopInfo.initialMount + "件";
+        }%>
+        <div class="text">起批：<%:=qp%></div>
+    </script>
+
+    <script id="addr" type="text/html">
+        <span><%:=addr%></span><i class="icon-pt"></i><span class="txt-r">现货</span>
+    </script>
+
+</body>
+</html>

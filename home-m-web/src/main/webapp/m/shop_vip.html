@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+    <meta name="keywords" content="B2B"/>
+    <meta name="description" content="B2B"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/script_ini.js?pg=shop"></script>
+</head>
+
+<body>
+<div class="m-header">
+    <a href="javascript:history.go(-1);" class="sp-icon go-backs">返回</a>
+    <h1>会员专区</h1>
+</div>
+<div class="user-v2" style="display: none">
+    <!-- 未登录 -->
+    <div class="user-box login" style="display:none;">
+        <div class="user-photo">
+            <img src="images/user.png">
+        </div>
+        <div class="bottom">
+            <p>您还未登录，请<a class="member-login" href="javascript:;">登录</a>后查看</p>
+        </div>
+    </div>
+
+    <!-- 不是该店会员 -->
+    <div class="user-box no_vip" style="display:none;">
+        <div class="user-photo">
+            <img src="images/user.png">
+        </div>
+        <div class="bottom">
+            <span class="name">yearting</span>
+            <p>您还不是该店的会员</p>
+        </div>
+    </div>
+
+    <!-- 会员 -->
+    <div class="user-box vip" style="display:none;">
+        <div class="user-photo">
+            <img src="images/user.png">
+        </div>
+        <div class="bottom">
+            <span class="name"></span>
+            <div class="member-lv">
+                <span></span>
+                <!--<span> </span><i>|</i><span><span class="discount"></span>折</span>-->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="member-only" style="display: none"></div>
+
+<!-- 未设置会员体系 -->
+<div class="no-page" style="display: none">
+    <i class="no-icon icon9"></i>
+    <div class="no-text">
+        <p>该商家当前尚未设置会员体系</p>
+    </div>
+</div>
+
+<!-- 会员等级模板 -->
+<script id="card_rank" type="text/html">
+    <%for (var i=0; i
+    <rank_list.length; i++) {%>
+    <div class="member-only-item">
+        <div class="member-only-left">
+            <i class="vip-img vp<%:=rank_list[i].level%>"></i>
+            <div class="vip-desc">
+                <h3><%:=rank_list[rank_list.length - i - 1].levelTag%></h3>
+                <p>累计交易<span class="rights-price">
+                <% if(rank_list[rank_list.length - i - 1].orderAmount == null){%>
+                /
+                <%}else{%>
+                <%:=rank_list[rank_list.length - i - 1].orderAmount/100%>
+                <%}%>
+            </span>元，或交易<span class="rights-count">
+                <% if(rank_list[rank_list.length - i - 1].orderCount == null){%>
+                /
+                <%}else{%>
+                <%:=rank_list[rank_list.length - i - 1].orderCount%>
+                <%}%>
+            </span>次</p>
+            </div>
+        </div>
+        <div class="member-only-right">
+            <span><%:=rank_list[rank_list.length - i - 1].discount/10%></span>折
+        </div>
+    </div>
+    <%}%>
+</script>
+</body>
+</html>
+                 

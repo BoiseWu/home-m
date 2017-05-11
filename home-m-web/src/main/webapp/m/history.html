@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <title></title>
+    <meta name="keywords" content="B2B" />
+    <meta name="description" content="B2B" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+	<META HTTP-EQUIV="Expires" CONTENT="0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/script_ini.js?pg=history"></script>
+
+    <style type="text/css">
+        .right_status{position: relative; padding:0 10px 0 40px; white-space: nowrap;}
+
+    </style>
+</head>
+<body>
+
+<div class="cart" style="padding-bottom: 0">
+
+</div>
+
+
+
+<div class="p-acitonbar action-del" style="display: none">
+    <div class="ui-flex ui-flex-v3">
+        <div class="check"><i class="all-check"><span class="cart-checkbox"><i class="icon-chk"></i></span></i><span class="text">全选</span></div>
+        <a href="#" class="cell btn-pay">删除记录</a>
+    </div>
+</div>
+
+<div class="no-page" style="display: none">
+    <i class="no-icon icon7"></i>
+    <div class="no-text">
+        <p>您还未收藏过任何店铺哦</p>
+        <a href="javascript:;" class="btn-rhome">去首页逛逛</a>
+    </div>
+</div>
+
+<div class="loading-bg" style="height:60px;display:none">
+    <div class="loading">
+        <div class="loading-tbl">
+            <div class="cell">
+                <div class="bd">
+                    <img src="images/loading.gif" width="22px" height="22px">正在加载...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script id="history_map" type="text/html">
+
+
+    <% for(var p=0; p<map.length; p++){ %>
+
+    <div class="view-date">
+        <%:=map[p].visitDate%>
+    </div>
+
+    <div class="order-list order-list-v3 ol_nor">
+        <ul>
+            <% for(var i=0; i<map[p].mVisitHistoryVos.length; i++){ %>
+            <li data-itemId="<%:=map[p].mVisitHistoryVos[i].itemId%>" data-id="<%:=map[p].mVisitHistoryVos[i].id%>">
+
+                <div class="chk-box">
+
+                    <i class="all-check"><span class="cart-checkbox"><i class="icon-chk"></i></span></i>
+                    <div class="goods-box">
+                        <div class="chk-box-list">
+                            <% if(map[p].mVisitHistoryVos[i].itemStatus==4){ %>
+                            <div class="l-item">
+                                <a href="#" class="box">
+                                    <div class="photo">
+                                        <img src=<%:=map[p].mVisitHistoryVos[i].picUrl%> >
+                                    </div>
+                                    <div class="info">
+                                        <h3><%:=map[p].mVisitHistoryVos[i].itemName%> </h3>
+                                        <p><%:=map[p].mVisitHistoryVos[i].shopAddress%>  成交 <%:=map[p].mVisitHistoryVos[i].salenum%> 笔</p>
+                                        <div class="shop"><span><i class="icon"></i></span><em><%:=map[p].mVisitHistoryVos[i].shopName%></em></div>
+                                        <em class="price">￥<%:=map[p].mVisitHistoryVos[i].minPrice%>~￥<%:=map[p].mVisitHistoryVos[i].maxPrice%></em>
+                                    </div>
+                                </a>
+                            </div>
+                            <%} else{%>
+                            <div class="l-item l-item-v1">
+                                <div class="box">
+                                    <div class="photo">
+                                        <img src=<%:=map[p].mVisitHistoryVos[i].picUrl%> >
+                                        <span class="tip">宝贝失效</span>
+                                    </div>
+                                    <div class="info">
+                                        <h3><%:=map[p].mVisitHistoryVos[i].itemName%> </h3>
+                                        <p><%:=map[p].mVisitHistoryVos[i].shopAddress%>  成交 <%:=map[p].mVisitHistoryVos[i].salenum%> 笔</p>
+                                        <div class="shop" style="display:none;"><span><i class="icon"></i></span><em><%:=map[p].mVisitHistoryVos[i].shopName%></em></div>
+                                        <em class="price">￥<%:=map[p].mVisitHistoryVos[i].minPrice%>~￥<%:=map[p].mVisitHistoryVos[i].maxPrice%></em>
+                                    </div>
+                                </div>
+                            </div>
+                            <%} %>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+    <%}%>
+</script>
+</html>

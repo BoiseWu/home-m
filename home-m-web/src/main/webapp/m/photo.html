@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link href='css/jquery.gridly.css' rel='stylesheet' type='text/css' />
+<link href='css/sample.css' rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=photo"></script>
+<script src='js/jquery.js' type='text/javascript'></script>
+<script src='js/jquery-ui.js' type='text/javascript'></script>
+<script src='js/jquery.gridly.js' type='text/javascript'></script>
+<script src='js/sample.js' type='text/javascript'></script>
+<script src='js/rainbow.js' type='text/javascript'></script>
+
+</head>
+<body>
+<div class="main-page">
+    <div class="m-header m-header-fix">
+        <a href="javascript:history.go(-1)" class="sp-icon go-backs back">返回</a>
+        <h1>我的相册</h1>
+        <a href="javascript:;" id="photo-edit" class="btn-edit">编辑</a> <a href="javascript:;" id="photo-end" class="btn-edit">完成</a>
+    <div class='content' >
+        <section class='example'>
+            <div class='gridly'>
+<!-- 图片填充 -->
+            </div>
+        </section>
+    </div>
+
+<form action="/m/public/uploadImg" method="POST" enctype="multipart/form-data" id="uploadImg" >
+<div class="m-address release-goods">
+
+    <div class="add-group">
+        <div class="img-group">
+            <ul>
+                <li>
+                    <span class="img"><input type="file" name="imgFile" id="imgFile" title="" class="file"/><img src="images/@img/@100_2.png"></span>
+                    <span class="upload">添加图片</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</form>
+
+    <div class="footer-tab-v1">
+        <a href="javascript:;" class="m-btn">确认发布</a>
+    </div>
+
+    </div>
+
+</div>
+
+<!-- 图片列表模板 -->
+<script id="imgTemp" type="text/html">
+    <%for(var i=0;i<list.length;i++) { %>
+    <div class='brick small' data-id="<%:=list[i].id%>">
+        <img src="<%:=list[i].picUrl%>" style="width: 100% ; height: 100%" >
+        <a class='delete delete_photo'  href='#' style="display: none">&times;</a>
+    </div>
+    <%}%>
+</script>
+
+</body>
+</html>

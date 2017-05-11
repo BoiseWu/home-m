@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <title></title>
+<meta name="keywords" content="B2B" />
+<meta name="description" content="B2B" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script_ini.js?pg=coupon"></script>
+</head>
+
+<body>
+<div class="m-header">
+    <a href="javascript:;" class="sp-icon go-backs">返回</a>
+    <h1>优惠券</h1>
+</div>
+
+<div class="sort-list sort-list-v1">
+    <div class="sort-tap">
+        <ul class="tap">
+        <li class="on"><a href="javascript:;" data-state="unused">未使用<span style="display:none">（0）</span></a></li>
+        <li><a href="javascript:;" data-state="expired">已过期<span style="display:none">（0）</span></a></li>
+        <li><a href="javascript:;" data-state="used">已使用<span style="display:none">（0）</span></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="coupon-list">
+
+</div>
+
+<script id="coupon_list" type="text/html">
+    <%if (coupon_list.length == 0) {%>
+        <div class="no-page">
+            <i class="no-icon icon7"></i>
+            <div class="no-text">
+                <p><%:=get_alt_tips(coupon_state)%></p>
+            </div>
+        </div>
+    <%} else {%>
+        <%for (var i = 0; i < coupon_list.length; i++) {%>
+            <% if (coupon_state == "unused") {%>
+                <div class="buy-cp">
+            <%} else if (coupon_state == "expired") {%>
+                <div class="buy-cp buy-cp-v1">
+                    <span class="order-cmp"></span>
+            <%} else if (coupon_state == "used") {%>
+                <div class="buy-cp buy-cp-v1">
+                    <span class="order-cmp2"></span>
+            <%}%>
+                <%var coupon = coupon_list[i]%>
+                <div class="cp-bg">
+                    <span class="cp-bg-txt"><span class="text">￥</span><span class="text2"><%:=get_format_price(coupon.denomination)%></span></span>
+                    <span class="cp-bg-txt2">满<span><%:=get_format_price(coupon.startFee)%></span>元可用</span>
+                </div>
+                <div class="cp-bg2">
+    	            <span class="cp-bg-txt">
+        	            <span class="text"><%:=coupon.name%></span>
+                        <span class="text2"><%:=coupon.applicable_scope%></span>
+                    </span>
+                    <span class="cp-bg-txt2">使用期限：
+                        <span class="date"><%:=get_date(coupon.effectiveStartTime,".").ymd%>-<%:=get_date(coupon.effectiveEndTime,".").ymd%></span>
+                    </span>
+                </div>
+            </div>
+        <%}%>
+    <%}%>
+</script>
+
+</body>
+</html>
